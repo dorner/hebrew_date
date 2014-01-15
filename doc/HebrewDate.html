@@ -1,0 +1,2611 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: HebrewDate
+  
+    &mdash; Documentation by YARD 0.8.7.3
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (H)</a> &raquo;
+    
+    
+    <span class="title">HebrewDate</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: HebrewDate
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">Delegator</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">Delegator</li>
+          
+            <li class="next">HebrewDate</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+      <dt class="r2">Includes:</dt>
+      <dd class="r2"><span class='object_link'><a href="HebrewDateSupport/Holidays.html" title="HebrewDateSupport::Holidays (module)">HebrewDateSupport::Holidays</a></span>, <span class='object_link'><a href="HebrewDateSupport/Parshiot.html" title="HebrewDateSupport::Parshiot (module)">HebrewDateSupport::Parshiot</a></span></dd>
+      
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">lib/hebrew_date.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>A class that represents a date in both the Gregorian and Hebrew calendars
+simultaneously. Note that you may call any Date methods on this class and
+it should respond accordingly.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+  <h2>Constant Summary</h2>
+  
+
+
+
+
+  <h2>Class Attribute Summary <small>(<a href="#" class="summary_toggle">collapse</a>)</small></h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ashkenaz-class_method" title="ashkenaz (class method)">+ (Boolean) <strong>ashkenaz</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Whether to use Ashkenazi pronunciation.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#israeli-class_method" title="israeli (class method)">+ (Boolean) <strong>israeli</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Whether to use Israeli parsha/holiday scheme.</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
+
+  <h2>Instance Attribute Summary <small>(<a href="#" class="summary_toggle">collapse</a>)</small></h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#date-instance_method" title="#date (instance method)">- (Integer) <strong>date</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The current Gregorian day of the month (1-31).</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#hebrew_date-instance_method" title="#hebrew_date (instance method)">- (Integer) <strong>hebrew_date</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The current Hebrew date (1-30).</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#hebrew_month-instance_method" title="#hebrew_month (instance method)">- (Integer) <strong>hebrew_month</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The current Hebrew month (1-13).</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#hebrew_year-instance_method" title="#hebrew_year (instance method)">- (Integer) <strong>hebrew_year</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The current Hebrew year (e.g. 5775).</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#month-instance_method" title="#month (instance method)">- (Integer) <strong>month</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The current Gregorian month (1-12).</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#year-instance_method" title="#year (instance method)">- (Integer) <strong>year</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The current Gregorian year (e.g. 2008).</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#new_from_hebrew-class_method" title="new_from_hebrew (class method)">+ (Object) <strong>new_from_hebrew</strong>(year, month, date) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Create a HebrewDate with initialized Hebrew date values.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#back-instance_method" title="#back (instance method)">- (void) <strong>back</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Move back one day.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#clone-instance_method" title="#clone (instance method)">- (HebrewDate) <strong>clone</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get a clone of this object.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#day-instance_method" title="#day (instance method)">- (Integer) <strong>day</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get the day of the week.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#forward-instance_method" title="#forward (instance method)">- (void) <strong>forward</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Move forward one day.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#hebrew_leap_year%3F-instance_method" title="#hebrew_leap_year? (instance method)">- (Boolean) <strong>hebrew_leap_year?</strong>(year = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Is this a Hebrew leap year?.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#hebrew_month_to_s-instance_method" title="#hebrew_month_to_s (instance method)">- (String) <strong>hebrew_month_to_s</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get the name of the current Hebrew month.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">- (HebrewDate) <strong>initialize</strong>(year_or_date_object = nil, month = nil, date = nil) </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>A new instance of HebrewDate.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#last_day_of_hebrew_month-instance_method" title="#last_day_of_hebrew_month (instance method)">- (Integer) <strong>last_day_of_hebrew_month</strong>(month = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Last day of the current Hebrew month.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#last_day_of_month-instance_method" title="#last_day_of_month (instance method)">- (Integer) <strong>last_day_of_month</strong>(month = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The last day of the Gregorian month.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#last_month_of_hebrew_year-instance_method" title="#last_month_of_hebrew_year (instance method)">- (Integer) <strong>last_month_of_hebrew_year</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The last month in this Hebrew year (12 or 13).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#set_date-instance_method" title="#set_date (instance method)">- (void) <strong>set_date</strong>(year, month, date) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Set the Gregorian date of this HebrewDate.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#set_hebrew_date-instance_method" title="#set_hebrew_date (instance method)">- (void) <strong>set_hebrew_date</strong>(year, month, date) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Set the Hebrew date.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#strftime-instance_method" title="#strftime (instance method)">- (String) <strong>strftime</strong>(format) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Extend the Date strftime method by replacing Hebrew fields.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_date-instance_method" title="#to_date (instance method)">- (Date) <strong>to_date</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Return a Ruby Date corresponding to the Gregorian date.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="HebrewDateSupport/Holidays.html" title="HebrewDateSupport::Holidays (module)">HebrewDateSupport::Holidays</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="HebrewDateSupport/Holidays.html#candle_lighting_day%3F-instance_method" title="HebrewDateSupport::Holidays#candle_lighting_day? (method)">#candle_lighting_day?</a></span>, <span class='object_link'><a href="HebrewDateSupport/Holidays.html#first_day_yom_tov%3F-instance_method" title="HebrewDateSupport::Holidays#first_day_yom_tov? (method)">#first_day_yom_tov?</a></span>, <span class='object_link'><a href="HebrewDateSupport/Holidays.html#havdala_day%3F-instance_method" title="HebrewDateSupport::Holidays#havdala_day? (method)">#havdala_day?</a></span>, <span class='object_link'><a href="HebrewDateSupport/Holidays.html#holiday-instance_method" title="HebrewDateSupport::Holidays#holiday (method)">#holiday</a></span>, <span class='object_link'><a href="HebrewDateSupport/Holidays.html#omer-instance_method" title="HebrewDateSupport::Holidays#omer (method)">#omer</a></span>, <span class='object_link'><a href="HebrewDateSupport/Holidays.html#omer_to_s-instance_method" title="HebrewDateSupport::Holidays#omer_to_s (method)">#omer_to_s</a></span>, <span class='object_link'><a href="HebrewDateSupport/Holidays.html#rosh_chodesh%3F-instance_method" title="HebrewDateSupport::Holidays#rosh_chodesh? (method)">#rosh_chodesh?</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="HebrewDateSupport/Parshiot.html" title="HebrewDateSupport::Parshiot (module)">HebrewDateSupport::Parshiot</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="HebrewDateSupport/Parshiot.html#parsha-instance_method" title="HebrewDateSupport::Parshiot#parsha (method)">#parsha</a></span></p>
+
+  <div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="HebrewDate (class)">HebrewDate</a></span></tt>) <strong>initialize</strong>(year_or_date_object = nil, month = nil, date = nil) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a new instance of HebrewDate</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 59</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_year_or_date_object'>year_or_date_object</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_month'>month</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_date'>date</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='ivar'>@abs_date</span> <span class='op'>=</span> <span class='int'>0</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_month'>month</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_date'>date</span>
+    <span class='ivar'>@year</span> <span class='op'>=</span> <span class='id identifier rubyid_year_or_date_object'>year_or_date_object</span>
+    <span class='ivar'>@month</span> <span class='op'>=</span> <span class='id identifier rubyid_month'>month</span>
+    <span class='ivar'>@date</span> <span class='op'>=</span> <span class='id identifier rubyid_date'>date</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_date'>date</span> <span class='op'>=</span> <span class='id identifier rubyid_year_or_date_object'>year_or_date_object</span> <span class='op'>||</span> <span class='const'>Date</span><span class='period'>.</span><span class='id identifier rubyid_today'>today</span>
+    <span class='ivar'>@year</span> <span class='op'>=</span> <span class='id identifier rubyid_date'>date</span><span class='period'>.</span><span class='id identifier rubyid_year'>year</span>
+    <span class='ivar'>@month</span> <span class='op'>=</span> <span class='id identifier rubyid_date'>date</span><span class='period'>.</span><span class='id identifier rubyid_month'>month</span>
+    <span class='ivar'>@date</span> <span class='op'>=</span> <span class='id identifier rubyid_date'>date</span><span class='period'>.</span><span class='id identifier rubyid_mday'>mday</span>
+  <span class='kw'>end</span>
+  <span class='ivar'>@israeli</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_israeli'>israeli</span>
+  <span class='ivar'>@ashkenaz</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_ashkenaz'>ashkenaz</span>
+  <span class='ivar'>@debug</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span>
+  <span class='id identifier rubyid_set_date'>set_date</span><span class='lparen'>(</span><span class='ivar'>@year</span><span class='comma'>,</span> <span class='ivar'>@month</span><span class='comma'>,</span> <span class='ivar'>@date</span><span class='rparen'>)</span>
+  <span class='kw'>super</span><span class='lparen'>(</span><span class='const'>Date</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+  <div id="class_attr_details" class="attr_details">
+    <h2>Class Attribute Details</h2>
+    
+      
+      <span id="ashkenaz=-class_method"></span>
+      <div class="method_details first">
+  <h3 class="signature first" id="ashkenaz-class_method">
+  
+    + (<tt>Boolean</tt>) <strong>ashkenaz</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns Whether to use Ashkenazi pronunciation.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Whether to use Ashkenazi pronunciation.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+28
+29
+30</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 28</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_ashkenaz'>ashkenaz</span>
+  <span class='ivar'>@ashkenaz</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="israeli=-class_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="israeli-class_method">
+  
+    + (<tt>Boolean</tt>) <strong>israeli</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns Whether to use Israeli parsha/holiday scheme.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Whether to use Israeli parsha/holiday scheme.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+31
+32
+33</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 31</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_israeli'>israeli</span>
+  <span class='ivar'>@israeli</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id=""></span>
+      <div class="method_details first">
+  <h3 class="signature first" id="date-instance_method">
+  
+    - (<tt>Integer</tt>) <strong>date</strong>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the current Gregorian day of the month (1-31).</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the current Gregorian day of the month (1-31).</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+45
+46
+47</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 45</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_date'>date</span>
+  <span class='ivar'>@date</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <div class="method_details ">
+  <h3 class="signature " id="hebrew_date-instance_method">
+  
+    - (<tt>Integer</tt>) <strong>hebrew_date</strong>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the current Hebrew date (1-30).</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the current Hebrew date (1-30).</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+54
+55
+56</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 54</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_hebrew_date'>hebrew_date</span>
+  <span class='ivar'>@hebrew_date</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <div class="method_details ">
+  <h3 class="signature " id="hebrew_month-instance_method">
+  
+    - (<tt>Integer</tt>) <strong>hebrew_month</strong>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the current Hebrew month (1-13).</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the current Hebrew month (1-13).</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+51
+52
+53</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 51</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_hebrew_month'>hebrew_month</span>
+  <span class='ivar'>@hebrew_month</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <div class="method_details ">
+  <h3 class="signature " id="hebrew_year-instance_method">
+  
+    - (<tt>Integer</tt>) <strong>hebrew_year</strong>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the current Hebrew year (e.g. 5775).</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the current Hebrew year (e.g. 5775).</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+48
+49
+50</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 48</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_hebrew_year'>hebrew_year</span>
+  <span class='ivar'>@hebrew_year</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <div class="method_details ">
+  <h3 class="signature " id="month-instance_method">
+  
+    - (<tt>Integer</tt>) <strong>month</strong>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the current Gregorian month (1-12).</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the current Gregorian month (1-12).</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+42
+43
+44</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 42</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_month'>month</span>
+  <span class='ivar'>@month</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <div class="method_details ">
+  <h3 class="signature " id="year-instance_method">
+  
+    - (<tt>Integer</tt>) <strong>year</strong>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the current Gregorian year (e.g. 2008).</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the current Gregorian year (e.g. 2008).</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+39
+40
+41</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 39</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_year'>year</span>
+  <span class='ivar'>@year</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="new_from_hebrew-class_method">
+  
+    + (<tt>Object</tt>) <strong>new_from_hebrew</strong>(year, month, date) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Create a HebrewDate with initialized Hebrew date values.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>year</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the Hebrew year (e.g. 5774)</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>month</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the Hebrew month (1-13)</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>date</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the day of the Hebrew month (1-30)</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+104
+105
+106
+107
+108</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 104</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new_from_hebrew'>new_from_hebrew</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='comma'>,</span> <span class='id identifier rubyid_month'>month</span><span class='comma'>,</span> <span class='id identifier rubyid_date'>date</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_d'>d</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+  <span class='id identifier rubyid_d'>d</span><span class='period'>.</span><span class='id identifier rubyid_set_hebrew_date'>set_hebrew_date</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='comma'>,</span> <span class='id identifier rubyid_month'>month</span><span class='comma'>,</span> <span class='id identifier rubyid_date'>date</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_d'>d</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="back-instance_method">
+  
+    - (<tt>void</tt>) <strong>back</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p class="note returns_void">This method returns an undefined value.</p>
+<p>Move back one day.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 214</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_back'>back</span>
+  <span class='comment'># Change Gregorian date
+</span>  <span class='kw'>if</span> <span class='ivar'>@date</span> <span class='op'>==</span> <span class='int'>1</span>
+    <span class='kw'>if</span> <span class='ivar'>@month</span> <span class='op'>==</span> <span class='int'>1</span>
+      <span class='ivar'>@month</span> <span class='op'>=</span> <span class='int'>12</span>
+      <span class='ivar'>@year</span> <span class='op'>-=</span> <span class='int'>1</span>
+    <span class='kw'>else</span>
+      <span class='ivar'>@month</span> <span class='op'>-=</span> <span class='int'>1</span>
+    <span class='kw'>end</span>
+
+    <span class='comment'># change to last day of previous month
+</span>    <span class='ivar'>@date</span> <span class='op'>=</span> <span class='id identifier rubyid_last_day_of_month'>last_day_of_month</span>
+  <span class='kw'>else</span>
+    <span class='ivar'>@date</span> <span class='op'>-=</span> <span class='int'>1</span>
+  <span class='kw'>end</span>
+
+  <span class='comment'># Change Hebrew date
+</span>  <span class='kw'>if</span> <span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>1</span>
+    <span class='kw'>if</span> <span class='ivar'>@hebrew_month</span> <span class='op'>==</span> <span class='int'>1</span> <span class='comment'># Nisan
+</span>      <span class='ivar'>@hebrew_month</span> <span class='op'>=</span> <span class='id identifier rubyid_last_month_of_hebrew_year'>last_month_of_hebrew_year</span>
+    <span class='kw'>elsif</span> <span class='ivar'>@hebrew_month</span> <span class='op'>==</span> <span class='int'>7</span> <span class='comment'># Rosh Hashana
+</span>      <span class='ivar'>@hebrew_year</span> <span class='op'>-=</span> <span class='int'>1</span>
+      <span class='ivar'>@hebrew_month</span> <span class='op'>-=</span> <span class='int'>1</span>
+    <span class='kw'>else</span>
+      <span class='ivar'>@hebrew_month</span> <span class='op'>-=</span> <span class='int'>1</span>
+    <span class='kw'>end</span>
+    <span class='ivar'>@hebrew_date</span> <span class='op'>=</span> <span class='id identifier rubyid_last_day_of_hebrew_month'>last_day_of_hebrew_month</span>
+  <span class='kw'>else</span>
+    <span class='ivar'>@hebrew_date</span> <span class='op'>-=</span> <span class='int'>1</span>
+  <span class='kw'>end</span>
+
+  <span class='comment'># Change the absolute date
+</span>  <span class='ivar'>@abs_date</span> <span class='op'>-=</span> <span class='int'>1</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="clone-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="HebrewDate (class)">HebrewDate</a></span></tt>) <strong>clone</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get a clone of this object.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="HebrewDate (class)">HebrewDate</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+96
+97
+98</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 96</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_clone'>clone</span>
+  <span class='const'>HebrewDate</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_to_date'>to_date</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="day-instance_method">
+  
+    - (<tt>Integer</tt>) <strong>day</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get the day of the week.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the day of the week, 1-7.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+292
+293
+294</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 292</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_day'>day</span>
+  <span class='id identifier rubyid_to_date'>to_date</span><span class='period'>.</span><span class='id identifier rubyid_strftime'>strftime</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>%w</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span> <span class='op'>+</span> <span class='int'>1</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="forward-instance_method">
+  
+    - (<tt>void</tt>) <strong>forward</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p class="note returns_void">This method returns an undefined value.</p>
+<p>Move forward one day.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 171</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_forward'>forward</span>
+  <span class='comment'># Change Gregorian date
+</span>  <span class='kw'>if</span> <span class='ivar'>@date</span> <span class='op'>==</span> <span class='id identifier rubyid_last_day_of_month'>last_day_of_month</span>
+    <span class='kw'>if</span> <span class='ivar'>@month</span> <span class='op'>==</span> <span class='int'>12</span>
+      <span class='comment'># last day of year
+</span>      <span class='ivar'>@year</span> <span class='op'>+=</span> <span class='int'>1</span>
+      <span class='ivar'>@month</span> <span class='op'>=</span> <span class='int'>1</span>
+      <span class='ivar'>@date</span> <span class='op'>=</span> <span class='int'>1</span>
+    <span class='kw'>else</span>
+      <span class='ivar'>@month</span> <span class='op'>+=</span> <span class='int'>1</span>
+      <span class='ivar'>@date</span> <span class='op'>=</span> <span class='int'>1</span>
+    <span class='kw'>end</span>
+  <span class='kw'>else</span>
+    <span class='comment'># if not last day of month
+</span>    <span class='ivar'>@date</span> <span class='op'>+=</span> <span class='int'>1</span>
+  <span class='kw'>end</span>
+
+  <span class='comment'># Change Hebrew date
+</span>  <span class='kw'>if</span> <span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='id identifier rubyid_last_day_of_hebrew_month'>last_day_of_hebrew_month</span>
+    <span class='kw'>if</span> <span class='ivar'>@hebrew_month</span> <span class='op'>==</span> <span class='int'>6</span>
+      <span class='comment'># last day of Elul (i.e. last day of Hebrew year)
+</span>      <span class='ivar'>@hebrew_year</span> <span class='op'>+=</span> <span class='int'>1</span>
+      <span class='ivar'>@hebrew_month</span> <span class='op'>+=</span> <span class='int'>1</span>
+      <span class='ivar'>@hebrew_date</span> <span class='op'>=</span> <span class='int'>1</span>
+    <span class='kw'>elsif</span> <span class='ivar'>@hebrew_month</span> <span class='op'>==</span> <span class='id identifier rubyid_last_month_of_hebrew_year'>last_month_of_hebrew_year</span>
+      <span class='comment'># last day of Adar or Adar II
+</span>      <span class='ivar'>@hebrew_month</span> <span class='op'>=</span> <span class='int'>1</span>
+      <span class='ivar'>@hebrew_date</span> <span class='op'>=</span> <span class='int'>1</span>
+    <span class='kw'>else</span>
+      <span class='ivar'>@hebrew_month</span> <span class='op'>+=</span> <span class='int'>1</span>
+      <span class='ivar'>@hebrew_date</span> <span class='op'>=</span> <span class='int'>1</span>
+    <span class='kw'>end</span>
+  <span class='kw'>else</span>
+    <span class='comment'># not last day of month
+</span>    <span class='ivar'>@hebrew_date</span> <span class='op'>+=</span> <span class='int'>1</span>
+  <span class='kw'>end</span>
+
+  <span class='comment'># increment the absolute date
+</span>  <span class='ivar'>@abs_date</span> <span class='op'>+=</span> <span class='int'>1</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="hebrew_leap_year?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>hebrew_leap_year?</strong>(year = nil) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Is this a Hebrew leap year?</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>year</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Used internally.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+319
+320
+321
+322</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 319</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_hebrew_leap_year?'>hebrew_leap_year?</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_year'>year</span> <span class='op'>||=</span> <span class='ivar'>@hebrew_year</span>
+  <span class='lparen'>(</span><span class='lparen'>(</span><span class='lparen'>(</span><span class='int'>7</span> <span class='op'>*</span> <span class='id identifier rubyid_year'>year</span><span class='rparen'>)</span> <span class='op'>+</span> <span class='int'>1</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_remainder'>remainder</span><span class='lparen'>(</span><span class='int'>19</span><span class='rparen'>)</span><span class='rparen'>)</span> <span class='op'>&lt;</span> <span class='int'>7</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="hebrew_month_to_s-instance_method">
+  
+    - (<tt>String</tt>) <strong>hebrew_month_to_s</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get the name of the current Hebrew month.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+251
+252
+253
+254
+255
+256
+257</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 251</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_hebrew_month_to_s'>hebrew_month_to_s</span>
+  <span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='const'>HEBREW_MONTH_NAMES</span><span class='lbracket'>[</span><span class='ivar'>@hebrew_month</span> <span class='op'>-</span> <span class='int'>1</span><span class='rbracket'>]</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_name'>name</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Teves</span><span class='tstring_end'>&#39;</span></span> <span class='op'>&amp;&amp;</span> <span class='op'>!</span><span class='ivar'>@ashkenaz</span>
+    <span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Tevet</span><span class='tstring_end'>&#39;</span></span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_name'>name</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="last_day_of_hebrew_month-instance_method">
+  
+    - (<tt>Integer</tt>) <strong>last_day_of_hebrew_month</strong>(month = nil) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Last day of the current Hebrew month.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>month</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Used internally.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 333</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_last_day_of_hebrew_month'>last_day_of_hebrew_month</span><span class='lparen'>(</span><span class='id identifier rubyid_month'>month</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_month'>month</span> <span class='op'>||=</span> <span class='ivar'>@hebrew_month</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_month'>month</span> <span class='op'>==</span> <span class='int'>2</span> <span class='op'>||</span>
+    <span class='id identifier rubyid_month'>month</span> <span class='op'>==</span> <span class='int'>4</span> <span class='op'>||</span>
+    <span class='id identifier rubyid_month'>month</span> <span class='op'>==</span> <span class='int'>6</span> <span class='op'>||</span>
+    <span class='lparen'>(</span><span class='id identifier rubyid_month'>month</span> <span class='op'>==</span> <span class='int'>8</span> <span class='op'>&amp;&amp;</span> <span class='op'>!</span><span class='id identifier rubyid__cheshvan_long?'>_cheshvan_long?</span><span class='rparen'>)</span> <span class='op'>||</span>
+    <span class='lparen'>(</span><span class='id identifier rubyid_month'>month</span> <span class='op'>==</span> <span class='int'>9</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid__kislev_short?'>_kislev_short?</span><span class='rparen'>)</span> <span class='op'>||</span>
+    <span class='id identifier rubyid_month'>month</span> <span class='op'>==</span> <span class='int'>10</span> <span class='op'>||</span>
+    <span class='lparen'>(</span><span class='id identifier rubyid_month'>month</span> <span class='op'>==</span> <span class='int'>12</span> <span class='op'>&amp;&amp;</span> <span class='op'>!</span><span class='id identifier rubyid_hebrew_leap_year?'>hebrew_leap_year?</span><span class='rparen'>)</span> <span class='op'>||</span>
+    <span class='id identifier rubyid_month'>month</span> <span class='op'>==</span> <span class='int'>13</span>
+    <span class='int'>29</span>
+  <span class='kw'>else</span>
+    <span class='int'>30</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="last_day_of_month-instance_method">
+  
+    - (<tt>Integer</tt>) <strong>last_day_of_month</strong>(month = nil) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The last day of the Gregorian month.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>month</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Used internally.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 299</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_last_day_of_month'>last_day_of_month</span><span class='lparen'>(</span><span class='id identifier rubyid_month'>month</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_month'>month</span> <span class='op'>||=</span> <span class='ivar'>@month</span>
+  <span class='kw'>case</span> <span class='id identifier rubyid_month'>month</span>
+    <span class='kw'>when</span> <span class='int'>2</span>
+      <span class='kw'>if</span> <span class='lparen'>(</span><span class='lparen'>(</span><span class='lparen'>(</span><span class='ivar'>@year</span><span class='period'>.</span><span class='id identifier rubyid_remainder'>remainder</span><span class='lparen'>(</span><span class='int'>4</span><span class='rparen'>)</span><span class='rparen'>)</span> <span class='op'>==</span> <span class='int'>0</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='lparen'>(</span><span class='lparen'>(</span><span class='ivar'>@year</span><span class='period'>.</span><span class='id identifier rubyid_remainder'>remainder</span><span class='lparen'>(</span><span class='int'>100</span><span class='rparen'>)</span><span class='rparen'>)</span> <span class='op'>!=</span> <span class='int'>0</span><span class='rparen'>)</span><span class='rparen'>)</span> <span class='op'>||</span>
+        <span class='lparen'>(</span><span class='lparen'>(</span><span class='ivar'>@year</span><span class='period'>.</span><span class='id identifier rubyid_remainder'>remainder</span><span class='lparen'>(</span><span class='int'>400</span><span class='rparen'>)</span><span class='rparen'>)</span> <span class='op'>==</span> <span class='int'>0</span><span class='rparen'>)</span>
+        <span class='int'>29</span>
+      <span class='kw'>else</span>
+        <span class='int'>28</span>
+      <span class='kw'>end</span>
+    <span class='kw'>when</span> <span class='int'>4</span><span class='comma'>,</span> <span class='int'>6</span><span class='comma'>,</span> <span class='int'>9</span><span class='comma'>,</span> <span class='int'>11</span>
+      <span class='int'>30</span>
+    <span class='kw'>else</span>
+      <span class='int'>31</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="last_month_of_hebrew_year-instance_method">
+  
+    - (<tt>Integer</tt>) <strong>last_month_of_hebrew_year</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The last month in this Hebrew year (12 or 13).</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+326
+327
+328</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 326</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_last_month_of_hebrew_year'>last_month_of_hebrew_year</span>
+  <span class='id identifier rubyid_hebrew_leap_year?'>hebrew_leap_year?</span> <span class='op'>?</span> <span class='int'>13</span> <span class='op'>:</span> <span class='int'>12</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="set_date-instance_method">
+  
+    - (<tt>void</tt>) <strong>set_date</strong>(year, month, date) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p class="note returns_void">This method returns an undefined value.</p>
+<p>Set the Gregorian date of this HebrewDate.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>year</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the Gregorian year (e.g. 2004)</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>month</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the Gregorian month (1-12)</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>date</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the Gregorian day of month (1-31)</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 115</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_set_date'>set_date</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='comma'>,</span> <span class='id identifier rubyid_month'>month</span><span class='comma'>,</span> <span class='id identifier rubyid_date'>date</span><span class='rparen'>)</span>
+  <span class='comment'># precond should be 1-&gt;12 anyways, but just in case...
+</span>  <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Illegal value for year: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_year'>year</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='id identifier rubyid_year'>year</span> <span class='op'>&lt;</span> <span class='int'>0</span>
+  <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Illegal value for month: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_month'>month</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='id identifier rubyid_month'>month</span> <span class='op'>&gt;</span> <span class='int'>12</span> <span class='op'>||</span> <span class='id identifier rubyid_month'>month</span> <span class='op'>&lt;</span> <span class='int'>0</span>
+  <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Illegal value for date: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_date'>date</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='id identifier rubyid_date'>date</span> <span class='op'>&lt;</span> <span class='int'>0</span>
+
+  <span class='comment'># make sure date is a valid date for the given month.
+</span>  <span class='comment'># If not, set to last day of month
+</span>  <span class='id identifier rubyid_last_day'>last_day</span> <span class='op'>=</span> <span class='id identifier rubyid_last_day_of_month'>last_day_of_month</span><span class='lparen'>(</span><span class='id identifier rubyid_month'>month</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_date'>date</span> <span class='op'>=</span> <span class='id identifier rubyid_last_day'>last_day</span> <span class='kw'>if</span> <span class='id identifier rubyid_date'>date</span> <span class='op'>&gt;</span> <span class='id identifier rubyid_last_day'>last_day</span>
+
+  <span class='ivar'>@year</span> <span class='op'>=</span> <span class='id identifier rubyid_year'>year</span>
+  <span class='ivar'>@month</span> <span class='op'>=</span> <span class='id identifier rubyid_month'>month</span>
+  <span class='ivar'>@date</span> <span class='op'>=</span> <span class='id identifier rubyid_date'>date</span>
+
+<span class='comment'># init the Hebrew date
+</span>  <span class='ivar'>@abs_date</span> <span class='op'>=</span> <span class='id identifier rubyid__date_to_abs_date'>_date_to_abs_date</span><span class='lparen'>(</span><span class='ivar'>@year</span><span class='comma'>,</span> <span class='ivar'>@month</span><span class='comma'>,</span> <span class='ivar'>@date</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid__abs_date_to_hebrew_date!'>_abs_date_to_hebrew_date!</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="set_hebrew_date-instance_method">
+  
+    - (<tt>void</tt>) <strong>set_hebrew_date</strong>(year, month, date) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p class="note returns_void">This method returns an undefined value.</p>
+<p>Set the Hebrew date.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>year</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the Hebrew year (e.g. 2008)</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>month</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the Hebrew month (1-13)</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>date</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the Hebrew day of month (1-30)</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 140</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_set_hebrew_date'>set_hebrew_date</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='comma'>,</span> <span class='id identifier rubyid_month'>month</span><span class='comma'>,</span> <span class='id identifier rubyid_date'>date</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Illegal value for Hebrew year: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_year'>year</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='id identifier rubyid_year'>year</span> <span class='op'>&lt;</span> <span class='int'>0</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_month'>month</span> <span class='op'>&lt;</span> <span class='int'>0</span> <span class='op'>||</span> <span class='id identifier rubyid_month'>month</span> <span class='op'>&gt;</span> <span class='id identifier rubyid_last_month_of_hebrew_year'>last_month_of_hebrew_year</span>
+    <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Illegal value for Hebrew month: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_month'>month</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+  <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Illegal value for Hebrew date: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_date'>date</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='id identifier rubyid_date'>date</span> <span class='op'>&lt;</span> <span class='int'>0</span>
+
+  <span class='comment'># make sure date is valid for this month;
+</span>  <span class='comment'># otherwise, set to last day of month
+</span>  <span class='id identifier rubyid_last_day'>last_day</span> <span class='op'>=</span> <span class='id identifier rubyid_last_day_of_hebrew_month'>last_day_of_hebrew_month</span><span class='lparen'>(</span><span class='id identifier rubyid_month'>month</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_date'>date</span> <span class='op'>=</span> <span class='id identifier rubyid_last_day'>last_day</span> <span class='kw'>if</span> <span class='id identifier rubyid_date'>date</span> <span class='op'>&gt;</span> <span class='id identifier rubyid_last_day'>last_day</span>
+
+  <span class='ivar'>@hebrew_year</span> <span class='op'>=</span> <span class='id identifier rubyid_year'>year</span>
+  <span class='ivar'>@hebrew_month</span> <span class='op'>=</span> <span class='id identifier rubyid_month'>month</span>
+  <span class='ivar'>@hebrew_date</span> <span class='op'>=</span> <span class='id identifier rubyid_date'>date</span>
+
+	<span class='comment'># reset gregorian date
+</span>  <span class='ivar'>@abs_date</span> <span class='op'>=</span>
+    <span class='id identifier rubyid__hebrew_date_to_abs_date'>_hebrew_date_to_abs_date</span><span class='lparen'>(</span><span class='ivar'>@hebrew_year</span><span class='comma'>,</span> <span class='ivar'>@hebrew_month</span><span class='comma'>,</span> <span class='ivar'>@hebrew_date</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid__abs_date_to_date!'>_abs_date_to_date!</span>
+
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="strftime-instance_method">
+  
+    - (<tt>String</tt>) <strong>strftime</strong>(format) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Extend the Date strftime method by replacing Hebrew fields. You can denote
+Hebrew fields by using the * flag. Supported flags are:</p>
+
+<pre class="code ruby"><code class="ruby">* %*Y - Hebrew year
+* %*m - Hebrew month, zero-padded
+* %*_m - Hebrew month, blank-padded
+* %*-m - Hebrew month, no-padded
+* %*B - Hebrew month, full name
+* %*^B - Hebrew month, full name uppercase
+* %*b - Hebrew month, 3 letters
+* %*^b - Hebrew month, 3 letters uppercase
+* %*h - same as %*b
+* %*d - Hebrew day of month, zero-padded
+* %*-d - Hebrew day of month, no-padded
+* %*e - Hebrew day of month, blank-padded</code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>format</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 275</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_strftime'>strftime</span><span class='lparen'>(</span><span class='id identifier rubyid_format'>format</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_format'>format</span><span class='period'>.</span><span class='id identifier rubyid_gsub!'>gsub!</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>%*Y</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='ivar'>@hebrew_year</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rparen'>)</span><span class='period'>
+</span><span class='id identifier rubyid_    .gsub!'>    .gsub!</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>%*m</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='ivar'>@hebrew_month</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='period'>.</span><span class='id identifier rubyid_rjust'>rjust</span><span class='lparen'>(</span><span class='int'>2</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='period'>
+</span><span class='id identifier rubyid_    .gsub!'>    .gsub!</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>%*_m</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='ivar'>@hebrew_month</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='period'>.</span><span class='id identifier rubyid_rjust'>rjust</span><span class='lparen'>(</span><span class='int'>2</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'> </span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='period'>
+</span><span class='id identifier rubyid_    .gsub!'>    .gsub!</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>%*-m</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='ivar'>@hebrew_month</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rparen'>)</span><span class='period'>
+</span><span class='id identifier rubyid_    .gsub!'>    .gsub!</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>%*B</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_hebrew_month_to_s'>hebrew_month_to_s</span><span class='rparen'>)</span><span class='period'>
+</span><span class='id identifier rubyid_    .gsub!'>    .gsub!</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>%*^B</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_hebrew_month_to_s'>hebrew_month_to_s</span><span class='period'>.</span><span class='id identifier rubyid_upcase'>upcase</span><span class='rparen'>)</span><span class='period'>
+</span><span class='id identifier rubyid_    .gsub!'>    .gsub!</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>%*b</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_hebrew_month_to_s'>hebrew_month_to_s</span><span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>3</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='period'>
+</span><span class='id identifier rubyid_    .gsub!'>    .gsub!</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>%*^b</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_hebrew_month_to_s'>hebrew_month_to_s</span><span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>3</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_upcase'>upcase</span><span class='rparen'>)</span><span class='period'>
+</span><span class='id identifier rubyid_    .gsub!'>    .gsub!</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>%*h</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_hebrew_month_to_s'>hebrew_month_to_s</span><span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>3</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='period'>
+</span><span class='id identifier rubyid_    .gsub!'>    .gsub!</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>%*d</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='ivar'>@hebrew_date</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='period'>.</span><span class='id identifier rubyid_rjust'>rjust</span><span class='lparen'>(</span><span class='int'>2</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='period'>
+</span><span class='id identifier rubyid_    .gsub!'>    .gsub!</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>%*-d</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='ivar'>@hebrew_date</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rparen'>)</span><span class='period'>
+</span><span class='id identifier rubyid_    .gsub!'>    .gsub!</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>%*e</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='ivar'>@hebrew_date</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='period'>.</span><span class='id identifier rubyid_rjust'>rjust</span><span class='lparen'>(</span><span class='int'>2</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'> </span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_date-instance_method">
+  
+    - (<tt>Date</tt>) <strong>to_date</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Return a Ruby Date corresponding to the Gregorian date.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Date</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+165
+166
+167</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 165</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_to_date'>to_date</span>
+  <span class='const'>Date</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='ivar'>@year</span><span class='comma'>,</span> <span class='ivar'>@month</span><span class='comma'>,</span> <span class='ivar'>@date</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Thu Jan 16 19:44:45 2014 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.3 (ruby-2.0.0).
+</div>
+
+  </body>
+</html>

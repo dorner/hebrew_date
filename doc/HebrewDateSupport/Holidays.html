@@ -1,0 +1,1110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: HebrewDateSupport::Holidays
+  
+    &mdash; Documentation by YARD 0.8.7.3
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../';
+  framesUrl = "../frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (H)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../HebrewDateSupport.html" title="HebrewDateSupport (module)">HebrewDateSupport</a></span></span>
+     &raquo; 
+    <span class="title">Holidays</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Module: HebrewDateSupport::Holidays
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+    <dt class="r1">Included in:</dt>
+    <dd class="r1"><span class='object_link'><a href="../HebrewDate.html" title="HebrewDate (class)">HebrewDate</a></span></dd>
+    
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/support/holidays.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#candle_lighting_day%3F-instance_method" title="#candle_lighting_day? (instance method)">- (Boolean) <strong>candle_lighting_day?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Whether there is candle lighting today, i.e.it is either Friday, Erev Yom
+Tov, or 1st day yom tov when there is a second day.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#first_day_yom_tov%3F-instance_method" title="#first_day_yom_tov? (instance method)">- (Boolean) <strong>first_day_yom_tov?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Is this day a first day of Yom Tov? Only should return true if there is a
+second day.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#havdala_day%3F-instance_method" title="#havdala_day? (instance method)">- (Boolean) <strong>havdala_day?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Whether there is Havdala today.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#holiday-instance_method" title="#holiday (instance method)">- (String) <strong>holiday</strong>(generic = false) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns a string of the Jewish holiday or fast day for the current day, or
+an empty string if there is no holiday for this day.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#omer-instance_method" title="#omer (instance method)">- (Integer) <strong>omer</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get the number of the Omer for this day, or nil if there isn&#39;t one.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#omer_to_s-instance_method" title="#omer_to_s (instance method)">- (String) <strong>omer_to_s</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the omer day in the form “Omer X” or “Lag B&#39;Omer” or an empty
+string if there is no omer this day.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#rosh_chodesh%3F-instance_method" title="#rosh_chodesh? (instance method)">- (Boolean) <strong>rosh_chodesh?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Is this date Rosh Chodesh?.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="candle_lighting_day?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>candle_lighting_day?</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Whether there is candle lighting today, i.e.it is either Friday, Erev Yom
+Tov, or 1st day yom tov when there is a second day.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/support/holidays.rb', line 187</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_candle_lighting_day?'>candle_lighting_day?</span>
+  <span class='kw'>return</span> <span class='kw'>true</span> <span class='kw'>if</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_day'>day</span> <span class='op'>==</span> <span class='int'>6</span>
+  <span class='kw'>return</span> <span class='kw'>true</span> <span class='kw'>if</span> <span class='id identifier rubyid_first_day_yom_tov?'>first_day_yom_tov?</span>
+  <span class='kw'>case</span> <span class='ivar'>@hebrew_month</span>
+    <span class='kw'>when</span> <span class='int'>6</span>
+      <span class='comment'># Erev Rosh Hashana
+</span>      <span class='kw'>return</span> <span class='kw'>true</span> <span class='kw'>if</span> <span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>29</span>
+    <span class='kw'>when</span> <span class='int'>7</span>
+      <span class='comment'># Erev Yom Kippur, Erev Sukkos, Erev Shmini Atzeres
+</span>      <span class='kw'>return</span> <span class='kw'>true</span> <span class='kw'>if</span> <span class='lbracket'>[</span><span class='int'>9</span><span class='comma'>,</span> <span class='int'>14</span><span class='comma'>,</span> <span class='int'>21</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='ivar'>@hebrew_date</span><span class='rparen'>)</span>
+    <span class='kw'>when</span> <span class='int'>1</span>
+      <span class='comment'># Erev Pesach or Erev 7th day Pesach
+</span>      <span class='kw'>return</span> <span class='kw'>true</span> <span class='kw'>if</span> <span class='lbracket'>[</span><span class='int'>14</span><span class='comma'>,</span> <span class='int'>20</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='ivar'>@hebrew_date</span><span class='rparen'>)</span>
+    <span class='kw'>when</span> <span class='int'>3</span>
+      <span class='comment'># Erev Shavuos
+</span>      <span class='kw'>return</span> <span class='kw'>true</span> <span class='kw'>if</span> <span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>5</span>
+  <span class='kw'>end</span>
+  <span class='kw'>false</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="first_day_yom_tov?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>first_day_yom_tov?</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Is this day a first day of Yom Tov? Only should return true if there is a
+second day.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/support/holidays.rb', line 165</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_first_day_yom_tov?'>first_day_yom_tov?</span>
+  <span class='comment'># only second day Yom Tov in Israel is Rosh Hashana
+</span>  <span class='kw'>if</span> <span class='ivar'>@israeli</span>
+    <span class='kw'>return</span> <span class='ivar'>@hebrew_month</span> <span class='op'>==</span> <span class='int'>7</span> <span class='op'>&amp;&amp;</span> <span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>1</span>
+  <span class='kw'>end</span>
+  <span class='kw'>case</span> <span class='ivar'>@hebrew_month</span>
+    <span class='kw'>when</span> <span class='int'>7</span>
+      <span class='comment'># Rosh Hashana, Sukkos, and Shmini Atzeres
+</span>      <span class='kw'>return</span> <span class='kw'>true</span> <span class='kw'>if</span> <span class='lbracket'>[</span><span class='int'>1</span><span class='comma'>,</span> <span class='int'>15</span><span class='comma'>,</span> <span class='int'>22</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='ivar'>@hebrew_date</span><span class='rparen'>)</span>
+    <span class='kw'>when</span> <span class='int'>1</span>
+      <span class='comment'># 2nd and last days Pesach
+</span>      <span class='kw'>return</span> <span class='kw'>true</span> <span class='kw'>if</span> <span class='lbracket'>[</span><span class='int'>15</span><span class='comma'>,</span> <span class='int'>21</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='ivar'>@hebrew_date</span><span class='rparen'>)</span>
+    <span class='kw'>when</span> <span class='int'>3</span>
+      <span class='comment'># Shavuos
+</span>      <span class='kw'>return</span> <span class='kw'>true</span> <span class='kw'>if</span> <span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>6</span>
+  <span class='kw'>end</span>
+  <span class='kw'>false</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="havdala_day?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>havdala_day?</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Whether there is Havdala today. This would be Sat. night (except for a Yom
+Tov night), or Motzei Yom Tov (except for Fri. night).</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/support/holidays.rb', line 210</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_havdala_day?'>havdala_day?</span>
+  <span class='comment'># if today is a candlelighting day, then there is no havdala
+</span>  <span class='kw'>return</span> <span class='kw'>false</span> <span class='kw'>if</span> <span class='id identifier rubyid_candle_lighting_day?'>candle_lighting_day?</span>
+
+  <span class='comment'># if today is Sat. night, return true unless it is Yom Tov
+</span>  <span class='kw'>if</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_day'>day</span> <span class='op'>==</span> <span class='int'>7</span>
+    <span class='kw'>case</span> <span class='ivar'>@hebrew_month</span>
+      <span class='kw'>when</span> <span class='int'>7</span>
+        <span class='comment'># 1st day Rosh Hashana
+</span>        <span class='kw'>if</span> <span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>1</span>
+          <span class='kw'>false</span>
+        <span class='kw'>else</span>
+          <span class='comment'># Sukkos 1 and Shmini Atzeres if outside Israel
+</span>          <span class='ivar'>@israeli</span> <span class='op'>||</span> <span class='op'>!</span><span class='lbracket'>[</span><span class='int'>15</span><span class='comma'>,</span> <span class='int'>21</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='ivar'>@hebrew_date</span><span class='rparen'>)</span>
+        <span class='kw'>end</span>
+      <span class='kw'>when</span> <span class='int'>1</span>
+        <span class='comment'># Pesach 1 or 7
+</span>        <span class='ivar'>@israeli</span> <span class='op'>||</span> <span class='op'>!</span><span class='lbracket'>[</span><span class='int'>15</span><span class='comma'>,</span> <span class='int'>21</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='ivar'>@hebrew_date</span><span class='rparen'>)</span>
+      <span class='kw'>when</span> <span class='int'>3</span>
+        <span class='comment'># Shavos 1
+</span>        <span class='ivar'>@israeli</span> <span class='op'>||</span> <span class='ivar'>@hebrew_date</span> <span class='op'>!=</span> <span class='int'>6</span>
+      <span class='kw'>else</span>
+        <span class='kw'>true</span>
+    <span class='kw'>end</span>
+  <span class='kw'>else</span>
+    <span class='comment'># detect Motzai Yom Tov on non-Sat. night
+</span>    <span class='kw'>case</span> <span class='ivar'>@hebrew_month</span>
+      <span class='kw'>when</span> <span class='int'>7</span>
+        <span class='comment'># Rosh Hashana 2, Yom Kippur, Sukkos, Shmini Atzeres
+</span>        <span class='lbracket'>[</span><span class='int'>2</span><span class='comma'>,</span> <span class='int'>10</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='ivar'>@hebrew_date</span><span class='rparen'>)</span> <span class='op'>||</span>
+          <span class='lparen'>(</span><span class='ivar'>@israeli</span> <span class='op'>&amp;&amp;</span> <span class='lbracket'>[</span><span class='int'>15</span><span class='comma'>,</span> <span class='int'>22</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='ivar'>@hebrew_date</span><span class='rparen'>)</span><span class='rparen'>)</span> <span class='op'>||</span>
+          <span class='lparen'>(</span><span class='op'>!</span><span class='ivar'>@israeli</span> <span class='op'>&amp;&amp;</span> <span class='lbracket'>[</span><span class='int'>16</span><span class='comma'>,</span> <span class='int'>23</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='ivar'>@hebrew_date</span><span class='rparen'>)</span><span class='rparen'>)</span>
+      <span class='kw'>when</span> <span class='int'>1</span>
+        <span class='comment'># Pesach 1/7 or 2/8
+</span>        <span class='lparen'>(</span><span class='ivar'>@israeli</span> <span class='op'>&amp;&amp;</span> <span class='lbracket'>[</span><span class='int'>15</span><span class='comma'>,</span> <span class='int'>21</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='ivar'>@hebrew_date</span><span class='rparen'>)</span><span class='rparen'>)</span> <span class='op'>||</span>
+          <span class='lparen'>(</span><span class='op'>!</span><span class='ivar'>@israeli</span> <span class='op'>&amp;&amp;</span> <span class='lbracket'>[</span><span class='int'>16</span><span class='comma'>,</span> <span class='int'>22</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='ivar'>@hebrew_date</span><span class='rparen'>)</span><span class='rparen'>)</span>
+      <span class='kw'>when</span> <span class='int'>3</span>
+        <span class='comment'># Shavuos
+</span>        <span class='lparen'>(</span><span class='ivar'>@israeli</span> <span class='op'>&amp;&amp;</span> <span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>6</span><span class='rparen'>)</span> <span class='op'>||</span> <span class='lparen'>(</span><span class='op'>!</span><span class='ivar'>@israeli</span> <span class='op'>&amp;&amp;</span> <span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>7</span><span class='rparen'>)</span>
+      <span class='kw'>else</span>
+        <span class='kw'>false</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="holiday-instance_method">
+  
+    - (<tt>String</tt>) <strong>holiday</strong>(generic = false) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a string of the Jewish holiday or fast day for the current day, or
+an empty string if there is no holiday for this day. (e.g. “Pesach”) or a
+specific one (e.g. “Chol Hamoed Pesach”).</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>generic</span>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>false</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>whether you want just a generic name</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/support/holidays.rb', line 8</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_holiday'>holiday</span><span class='lparen'>(</span><span class='id identifier rubyid_generic'>generic</span><span class='op'>=</span><span class='kw'>false</span><span class='rparen'>)</span>
+
+  <span class='comment'># check by month (starts from Nissan)
+</span>  <span class='kw'>case</span> <span class='ivar'>@hebrew_month</span>
+    <span class='kw'>when</span> <span class='int'>1</span>
+      <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Erev Pesach</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>if</span> <span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>14</span>
+      <span class='kw'>if</span> <span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>15</span> <span class='op'>||</span> <span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>21</span> <span class='op'>||</span>
+        <span class='lparen'>(</span><span class='op'>!</span><span class='ivar'>@israeli</span> <span class='op'>&amp;&amp;</span> <span class='lparen'>(</span><span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>16</span> <span class='op'>||</span> <span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>22</span><span class='rparen'>)</span><span class='rparen'>)</span>
+        <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Pesach</span><span class='tstring_end'>&#39;</span></span>
+      <span class='kw'>end</span>
+      <span class='kw'>if</span> <span class='ivar'>@hebrew_date</span> <span class='op'>&gt;=</span> <span class='int'>17</span> <span class='op'>&amp;&amp;</span> <span class='ivar'>@hebrew_date</span> <span class='op'>&lt;=</span> <span class='int'>20</span> <span class='op'>||</span>
+        <span class='lparen'>(</span><span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>16</span> <span class='op'>&amp;&amp;</span> <span class='ivar'>@israeli</span><span class='rparen'>)</span>
+        <span class='kw'>return</span> <span class='id identifier rubyid_generic'>generic</span> <span class='op'>?</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Pesach</span><span class='tstring_end'>&#39;</span></span> <span class='op'>:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Chol Hamoed Pesach</span><span class='tstring_end'>&#39;</span></span>
+      <span class='kw'>end</span>
+    <span class='kw'>when</span> <span class='int'>2</span>
+      <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Pesach Sheni</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>if</span> <span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>14</span>
+      <span class='kw'>if</span> <span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>5</span> <span class='op'>&amp;&amp;</span> <span class='lbracket'>[</span><span class='int'>1</span><span class='comma'>,</span> <span class='int'>3</span><span class='comma'>,</span> <span class='int'>4</span><span class='comma'>,</span> <span class='int'>5</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_day'>day</span><span class='rparen'>)</span>
+        <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Yom Ha&#39;atzmaut</span><span class='tstring_end'>&quot;</span></span>
+      <span class='kw'>end</span>
+      <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Yom Ha&#39;atzmaut</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>6</span> <span class='op'>&amp;&amp;</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_day'>day</span> <span class='op'>==</span> <span class='int'>3</span>
+      <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Yom Ha&#39;atzmaut</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='lbracket'>[</span><span class='int'>3</span><span class='comma'>,</span> <span class='int'>4</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='ivar'>@hebrew_date</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span>
+        <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_day'>day</span> <span class='op'>==</span> <span class='int'>5</span>
+      <span class='kw'>if</span> <span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>4</span> <span class='op'>&amp;&amp;</span> <span class='lbracket'>[</span><span class='int'>2</span><span class='comma'>,</span> <span class='int'>3</span><span class='comma'>,</span> <span class='int'>4</span><span class='comma'>,</span> <span class='int'>7</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_day'>day</span><span class='rparen'>)</span>
+        <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Yom Hazikaron</span><span class='tstring_end'>&#39;</span></span>
+      <span class='kw'>end</span>
+      <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Yom Hazikaron</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>if</span> <span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>5</span> <span class='op'>&amp;&amp;</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_day'>day</span> <span class='op'>==</span> <span class='int'>2</span>
+      <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Yom Hazikaron</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>if</span> <span class='lbracket'>[</span><span class='int'>2</span><span class='comma'>,</span> <span class='int'>3</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='ivar'>@hebrew_date</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span>
+        <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_day'>day</span> <span class='op'>==</span> <span class='int'>4</span>
+      <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Yom Yerushalayim</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>if</span> <span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>28</span>
+    <span class='kw'>when</span> <span class='int'>3</span>
+      <span class='kw'>if</span> <span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>5</span>
+        <span class='kw'>return</span> <span class='ivar'>@ashkenaz</span> <span class='op'>?</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Erev Shavuos</span><span class='tstring_end'>&#39;</span></span> <span class='op'>:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Erev Shavuot</span><span class='tstring_end'>&#39;</span></span>
+      <span class='kw'>end</span>
+      <span class='kw'>if</span> <span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>6</span> <span class='op'>||</span> <span class='lparen'>(</span><span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>7</span> <span class='op'>&amp;&amp;</span> <span class='op'>!</span><span class='ivar'>@israeli</span><span class='rparen'>)</span>
+        <span class='kw'>return</span> <span class='ivar'>@ashkenaz</span> <span class='op'>?</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Shavuos</span><span class='tstring_end'>&#39;</span></span> <span class='op'>:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Shavuot</span><span class='tstring_end'>&#39;</span></span>
+      <span class='kw'>end</span>
+    <span class='kw'>when</span> <span class='int'>4</span>
+      <span class='comment'># push off the fast day if it falls on Shabbos
+</span>      <span class='kw'>if</span> <span class='lparen'>(</span><span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>17</span> <span class='op'>&amp;&amp;</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_day'>day</span> <span class='op'>!=</span> <span class='int'>7</span><span class='rparen'>)</span> <span class='op'>||</span>
+        <span class='lparen'>(</span><span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>18</span> <span class='op'>&amp;&amp;</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_day'>day</span> <span class='op'>==</span> <span class='int'>1</span><span class='rparen'>)</span>
+        <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Tzom Tammuz</span><span class='tstring_end'>&#39;</span></span>
+      <span class='kw'>end</span>
+    <span class='kw'>when</span> <span class='int'>5</span>
+      <span class='comment'># if Tisha B&#39;Av falls on Shabbos, push off until Sunday
+</span>      <span class='kw'>if</span> <span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_day'>day</span> <span class='op'>==</span> <span class='int'>1</span> <span class='op'>&amp;&amp;</span> <span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>10</span><span class='rparen'>)</span> <span class='op'>||</span>
+        <span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_day'>day</span> <span class='op'>!=</span> <span class='int'>7</span> <span class='op'>&amp;&amp;</span> <span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>9</span><span class='rparen'>)</span>
+        <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Tisha B&#39;av</span><span class='tstring_end'>&quot;</span></span>
+      <span class='kw'>end</span>
+      <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Tu B&#39;Av</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>15</span>
+    <span class='kw'>when</span> <span class='int'>6</span>
+      <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Erev Rosh Hashanah</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>if</span> <span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>29</span>
+    <span class='kw'>when</span> <span class='int'>7</span>
+      <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Rosh Hashanah</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>if</span> <span class='lbracket'>[</span><span class='int'>1</span><span class='comma'>,</span> <span class='int'>2</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='ivar'>@hebrew_date</span><span class='rparen'>)</span>
+      <span class='comment'># push off Tzom Gedalia if it falls on Shabbos
+</span>      <span class='kw'>if</span> <span class='lparen'>(</span><span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>3</span> <span class='op'>&amp;&amp;</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_day'>day</span> <span class='op'>!=</span> <span class='int'>7</span><span class='rparen'>)</span> <span class='op'>||</span>
+        <span class='lparen'>(</span><span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>4</span> <span class='op'>&amp;&amp;</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_day'>day</span> <span class='op'>==</span> <span class='int'>1</span><span class='rparen'>)</span>
+        <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Tzom Gedalia</span><span class='tstring_end'>&#39;</span></span>
+      <span class='kw'>end</span>
+      <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Erev Yom Kippur</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>if</span> <span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>9</span>
+      <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Yom Kippur</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>if</span> <span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>10</span>
+      <span class='kw'>if</span> <span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>14</span>
+        <span class='kw'>return</span> <span class='ivar'>@ashkenaz</span> <span class='op'>?</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Erev Sukkos</span><span class='tstring_end'>&#39;</span></span> <span class='op'>:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Erev Sukkot</span><span class='tstring_end'>&#39;</span></span>
+      <span class='kw'>end</span>
+      <span class='kw'>if</span> <span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>15</span> <span class='op'>||</span> <span class='lparen'>(</span><span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>16</span> <span class='op'>&amp;&amp;</span> <span class='op'>!</span><span class='ivar'>@israeli</span><span class='rparen'>)</span>
+        <span class='kw'>return</span> <span class='ivar'>@ashkenaz</span> <span class='op'>?</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Sukkos</span><span class='tstring_end'>&#39;</span></span> <span class='op'>:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Sukkot</span><span class='tstring_end'>&#39;</span></span>
+      <span class='kw'>end</span>
+      <span class='kw'>if</span> <span class='ivar'>@hebrew_date</span> <span class='op'>&gt;=</span> <span class='int'>17</span> <span class='op'>&amp;&amp;</span> <span class='ivar'>@hebrew_date</span> <span class='op'>&lt;=</span> <span class='int'>20</span> <span class='op'>||</span>
+        <span class='lparen'>(</span><span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>16</span> <span class='op'>&amp;&amp;</span> <span class='ivar'>@israeli</span><span class='rparen'>)</span>
+        <span class='kw'>if</span> <span class='ivar'>@ashkenaz</span>
+          <span class='kw'>return</span> <span class='id identifier rubyid_generic'>generic</span> <span class='op'>?</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Sukkos</span><span class='tstring_end'>&#39;</span></span> <span class='op'>:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Chol Hamoed Sukkos</span><span class='tstring_end'>&#39;</span></span>
+        <span class='kw'>else</span>
+          <span class='kw'>return</span> <span class='id identifier rubyid_generic'>generic</span> <span class='op'>?</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Sukkot</span><span class='tstring_end'>&#39;</span></span> <span class='op'>:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Chol Hamoed Sukkot</span><span class='tstring_end'>&#39;</span></span>
+        <span class='kw'>end</span>
+      <span class='kw'>end</span>
+      <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Hoshana Rabah</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>if</span> <span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>21</span>
+      <span class='kw'>if</span> <span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>22</span>
+        <span class='kw'>return</span> <span class='ivar'>@ashkenaz</span> <span class='op'>?</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Shmini Atzeres</span><span class='tstring_end'>&#39;</span></span> <span class='op'>:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Shmini Atzeret</span><span class='tstring_end'>&#39;</span></span>
+      <span class='kw'>end</span>
+      <span class='kw'>if</span> <span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>23</span> <span class='op'>&amp;&amp;</span> <span class='op'>!</span><span class='ivar'>@israeli</span>
+        <span class='kw'>return</span> <span class='ivar'>@ashkenaz</span> <span class='op'>?</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Simchas Torah</span><span class='tstring_end'>&#39;</span></span> <span class='op'>:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Simchat Torah</span><span class='tstring_end'>&#39;</span></span>
+      <span class='kw'>end</span>
+    <span class='kw'>when</span> <span class='int'>9</span>
+      <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Erev Chanukah</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>if</span> <span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>24</span>
+      <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Chanukah</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>if</span> <span class='ivar'>@hebrew_date</span> <span class='op'>&gt;=</span> <span class='int'>25</span>
+    <span class='kw'>when</span> <span class='int'>10</span>
+      <span class='kw'>if</span> <span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>1</span> <span class='op'>||</span> <span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>2</span> <span class='op'>||</span>
+        <span class='lparen'>(</span><span class='ivar'>@hebrew_date</span> <span class='op'>==</span><span class='int'>3</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid__kislev_short?'>_kislev_short?</span><span class='rparen'>)</span>
+        <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Chanukah</span><span class='tstring_end'>&#39;</span></span>
+      <span class='kw'>end</span>
+      <span class='kw'>if</span> <span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>10</span>
+        <span class='kw'>return</span> <span class='ivar'>@ashkenaz</span> <span class='op'>?</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Tzom Teves</span><span class='tstring_end'>&#39;</span></span> <span class='op'>:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Tzom Tevet</span><span class='tstring_end'>&#39;</span></span>
+      <span class='kw'>end</span>
+    <span class='kw'>when</span> <span class='int'>11</span>
+      <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Tu B&#39;Shvat</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>15</span>
+    <span class='kw'>when</span> <span class='int'>12</span>
+      <span class='kw'>if</span> <span class='id identifier rubyid_hebrew_leap_year?'>hebrew_leap_year?</span>
+        <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Purim Katan</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>if</span> <span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>14</span>
+      <span class='kw'>else</span>
+        <span class='comment'># if 13th Adar falls on Fri or Shabbos, push back to Thursday
+</span>        <span class='kw'>if</span> <span class='lparen'>(</span><span class='lparen'>(</span><span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>11</span> <span class='op'>||</span> <span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>12</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_day'>day</span> <span class='op'>==</span> <span class='int'>5</span><span class='rparen'>)</span> <span class='op'>||</span>
+          <span class='lparen'>(</span><span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>13</span> <span class='op'>&amp;&amp;</span> <span class='op'>!</span><span class='lbracket'>[</span><span class='int'>6</span><span class='comma'>,</span> <span class='int'>7</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_day'>day</span><span class='rparen'>)</span><span class='rparen'>)</span>
+          <span class='kw'>return</span> <span class='ivar'>@ashkenaz</span> <span class='op'>?</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Ta&#39;anis Esther</span><span class='tstring_end'>&quot;</span></span> <span class='op'>:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Ta&#39;anit Esther</span><span class='tstring_end'>&quot;</span></span>
+        <span class='kw'>end</span>
+        <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Purim</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>if</span> <span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>14</span>
+        <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Shushan Purim</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>if</span> <span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>15</span>
+      <span class='kw'>end</span>
+    <span class='kw'>when</span> <span class='int'>13</span>
+      <span class='comment'># if 13th Adar falls on Fri or Shabbos, push back to Thursday
+</span>      <span class='kw'>if</span> <span class='lparen'>(</span><span class='lparen'>(</span><span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>11</span> <span class='op'>||</span> <span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>12</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_day'>day</span> <span class='op'>==</span> <span class='int'>5</span><span class='rparen'>)</span> <span class='op'>||</span>
+        <span class='lparen'>(</span><span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>13</span> <span class='op'>&amp;&amp;</span> <span class='op'>!</span><span class='lbracket'>[</span><span class='int'>6</span><span class='comma'>,</span> <span class='int'>7</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_day'>day</span><span class='rparen'>)</span><span class='rparen'>)</span>
+        <span class='kw'>return</span> <span class='ivar'>@ashkenaz</span> <span class='op'>?</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Ta&#39;anis Esther</span><span class='tstring_end'>&quot;</span></span> <span class='op'>:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Ta&#39;anit Esther</span><span class='tstring_end'>&quot;</span></span>
+      <span class='kw'>end</span>
+      <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Purim</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>if</span> <span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>14</span>
+      <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Shushan Purim</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>if</span> <span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>15</span>
+    <span class='kw'>else</span>
+      <span class='comment'># if we get to this stage, then there are no holidays for the given date
+</span>      <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="omer-instance_method">
+  
+    - (<tt>Integer</tt>) <strong>omer</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get the number of the Omer for this day, or nil if there isn&#39;t one.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/support/holidays.rb', line 130</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_omer'>omer</span>
+  <span class='kw'>if</span> <span class='ivar'>@hebrew_month</span> <span class='op'>==</span> <span class='int'>1</span> <span class='op'>&amp;&amp;</span> <span class='ivar'>@hebrew_date</span> <span class='op'>&gt;=</span> <span class='int'>16</span>
+    <span class='comment'># Nissan, second day of Pesach and on
+</span>    <span class='ivar'>@hebrew_date</span> <span class='op'>-</span> <span class='int'>15</span>
+  <span class='kw'>elsif</span> <span class='ivar'>@hebrew_month</span> <span class='op'>==</span> <span class='int'>2</span> <span class='comment'># Iyar
+</span>    <span class='ivar'>@hebrew_date</span> <span class='op'>+</span> <span class='int'>15</span>
+  <span class='kw'>elsif</span> <span class='ivar'>@hebrew_month</span> <span class='op'>==</span> <span class='int'>3</span> <span class='op'>&amp;&amp;</span> <span class='ivar'>@hebrew_date</span> <span class='op'>&lt;</span> <span class='int'>6</span>
+    <span class='comment'># Sivan, before Shavuos
+</span>    <span class='ivar'>@hebrew_date</span> <span class='op'>+</span> <span class='int'>44</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="omer_to_s-instance_method">
+  
+    - (<tt>String</tt>) <strong>omer_to_s</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the omer day in the form “Omer X” or “Lag B&#39;Omer” or an empty
+string if there is no omer this day.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/support/holidays.rb', line 145</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_omer_to_s'>omer_to_s</span>
+  <span class='id identifier rubyid_omer'>omer</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_omer'>omer</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_omer'>omer</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+  <span class='kw'>elsif</span> <span class='id identifier rubyid_omer'>omer</span> <span class='op'>==</span> <span class='int'>33</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Lag B&#39;Omer</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>else</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Omer </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_omer'>omer</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="rosh_chodesh?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>rosh_chodesh?</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Is this date Rosh Chodesh?</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+158
+159
+160</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/support/holidays.rb', line 158</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_rosh_chodesh?'>rosh_chodesh?</span>
+  <span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>1</span> <span class='op'>||</span> <span class='ivar'>@hebrew_date</span> <span class='op'>==</span> <span class='int'>30</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Thu Jan 16 19:44:44 2014 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.3 (ruby-2.0.0).
+</div>
+
+  </body>
+</html>
