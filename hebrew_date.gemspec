@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name         = 'hebrew_date'
   s.require_paths = %w(. lib)
-  s.version      = '1.0.0'
+  s.version      = '1.0.1'
   s.date         = '2014-01-09'
   s.summary      = 'Hebrew/Jewish dates, times, and holidays.'
   s.description  = <<-EOF

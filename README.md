@@ -1,7 +1,7 @@
 # HebrewDate
 
 `hebrew_date` is a library designed to provide information about the Jewish
-calendar. This includes dates, <!---times,---> holidays, and parsha of the week.
+calendar. This includes dates, holidays, and parsha of the week.
 
 <!---
 `hebrew_date` depends on the [ruby-sun-times](https://github.com/joeyates/ruby-sun-times)
