@@ -66,16 +66,105 @@
 
 <p><code>hebrew_date</code> is a library designed to provide information about
 the Jewish
-calendar. This includes dates, times, holidays, and parsha of
-the week.</p>
+calendar. This includes dates, holidays, and parsha of the week.</p>
+<!---
+`hebrew_date` depends on the [ruby-sun-times](https://github.com/joeyates/ruby-sun-times)
+gem.
+--->
+<h1 id="label-Usage">Usage</h1>
 
-<p><code>hebrew_date</code> depends on the <a
-href="https://github.com/joeyates/ruby-sun-times">ruby-sun-times</a>
-gem.</p>
+<p>Full documentation can be found <a
+href="http://rawgithub.com/dorner/hebrew_date/master/doc/index.html">here</a>.</p>
+
+<p>To initialize a Hebrew date, you can use either the English date:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='const'>HebrewDate</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>2009</span><span class='comma'>,</span> <span class='int'>12</span><span class='comma'>,</span> <span class='int'>25</span><span class='rparen'>)</span></code></pre>
+
+<p>or the Hebrew one:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='const'>HebrewDate</span><span class='period'>.</span><span class='id identifier rubyid_new_from_hebrew'>new_from_hebrew</span><span class='lparen'>(</span><span class='int'>5775</span><span class='comma'>,</span> <span class='int'>4</span><span class='comma'>,</span> <span class='int'>29</span><span class='rparen'>)</span></code></pre>
+
+<p>HebrewDates respond to all the methods dates do:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='const'>HebrewDate</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='period'>.</span><span class='id identifier rubyid_saturday?'>saturday?</span>
+<span class='const'>HebrewDate</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='period'>.</span><span class='id identifier rubyid_beginning_of_week'>beginning_of_week</span> <span class='comment'># Rails
+</span><span class='const'>HebrewDate</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='op'>+</span> <span class='int'>3</span> <span class='comment'># go 3 days forward</span></code></pre>
+
+<h1 id="label-Printing">Printing</h1>
+
+<p>HebrewDate also responds to <code>strftime</code>, but provides a number of
+additional
+flags for printing Hebrew dates. These are identical to the
+normal flags
+except that they start with * instead of %:</p>
+<ul><li>
+<p><code>*Y</code> - Hebrew year</p>
+</li><li>
+<p><code>*m</code> - Hebrew month, zero-padded</p>
+</li><li>
+<p><code>*_m</code> - Hebrew month, blank-padded</p>
+</li><li>
+<p><code>*-m</code> - Hebrew month, no-padded</p>
+</li><li>
+<p><code>*B</code> - Hebrew month, full name</p>
+</li><li>
+<p><code>*^B</code> - Hebrew month, full name uppercase</p>
+</li><li>
+<p><code>*b</code> - Hebrew month, 3 letters</p>
+</li><li>
+<p><code>*^b</code> - Hebrew month, 3 letters uppercase</p>
+</li><li>
+<p><code>*h</code> - same as %*b</p>
+</li><li>
+<p><code>*d</code> - Hebrew day of month, zero-padded</p>
+</li><li>
+<p><code>*-d</code> - Hebrew day of month, no-padded</p>
+</li><li>
+<p><code>*e</code> - Hebrew day of month, blank-padded</p>
+</li></ul>
+
+<h1 id="label-Parsha">Parsha</h1>
+
+<p>You can get the parsha of the current day by calling the
+<code>parsha</code> method.
+This will only return a value if it is on
+Shabbat. By default the parsha
+will have &quot;special&quot; values
+appended to it (e.g. the special Parshiyot,
+Shekalim, Zachor, Parah and
+Hachodesh), which can optionally be suppressed.</p>
+
+<p>By default HebrewDate will use the “chutz la&#39;aretz” parsha scheme (i.e.
+assuming
+two-day Yom Tov). You can use the Israeli scheme by calling</p>
+
+<pre class="code ruby"><code class="ruby"><span class='const'>HebrewDate</span><span class='period'>.</span><span class='id identifier rubyid_israeli'>israeli</span> <span class='op'>=</span> <span class='kw'>true</span></code></pre>
+
+<p>before creating your first instance of HebrewDate.</p>
+
+<h1 id="label-Holiday">Holiday</h1>
+
+<p>If the current date is a Jewish holiday (including Erev Yom Tov and
+the
+&quot;modern&quot; holidays of Yom Ha&#39;atzmaut, Yom Hazikaron and
+Yom Yerushalayim) you
+can retrieve those as strings via the
+<code>holiday</code> method.</p>
+
+<p>Month names, holidays and parshiyot all will be in Sephardic /
+Mizrachi
+accents by default. You can change this to Ashkenazi pronunciation
+by calling</p>
+
+<pre class="code ruby"><code class="ruby"><span class='const'>HebrewDate</span><span class='period'>.</span><span class='id identifier rubyid_ashkenazi'>ashkenazi</span> <span class='op'>=</span> <span class='kw'>true</span></code></pre>
+
+<p>You can also retrieve a date from the holiday name:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='const'>HebrewDate</span><span class='period'>.</span><span class='id identifier rubyid_from_holiday'>from_holiday</span><span class='lparen'>(</span><span class='symbol'>:PURIM</span><span class='comma'>,</span> <span class='int'>5774</span><span class='rparen'>)</span></code></pre>
 </div></div>
 
     <div id="footer">
-  Generated on Thu Jan 16 19:44:44 2014 by
+  Generated on Sun Jan 26 12:16:13 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.3 (ruby-2.0.0).
 </div>

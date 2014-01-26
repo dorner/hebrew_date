@@ -1,5 +1,5 @@
 module HebrewDateSupport
-  module Parshiot
+  module ParshaMethods
     # Parsha names in Ashkenazi and Sephardi pronunciation.
     # @private
     PARSHA_NAMES          = [

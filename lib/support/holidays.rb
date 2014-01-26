@@ -1,5 +1,136 @@
 module HebrewDateSupport
-  module Holidays
+  module HolidayMethods
+    module ClassMethods
+
+      # A list of holidays which can be passed into the from_holiday method.
+      HOLIDAYS = [
+        :EREV_PESACH,
+        :PESACH,
+        :PESACH_2,
+        :PESACH_SHENI,
+        :YOM_HAATZMAUT,
+        :YOM_HAZIKARON,
+        :YOM_YERUSHALAYIM,
+        :LAG_BAOMER,
+        :EREV_SHAVUOT,
+        :SHAVUOT,
+        :TZOM_TAMMUZ,
+        :TISHA_BAV,
+        :TU_BAV,
+        :EREV_ROSH_HASHANA,
+        :ROSH_HASHANA,
+        :TZOM_GEDALIA,
+        :EREV_YOM_KIPPUR,
+        :YOM_KIPPUR,
+        :EREV_SUKKOT,
+        :SUKKOT,
+        :SHMINI_ATZERET,
+        :EREV_CHANUKAH,
+        :CHANUKAH,
+        :TZOM_TEVET,
+        :TU_BISHVAT,
+        :PURIM_KATAN,
+        :TAANIT_ESTHER,
+        :PURIM,
+        :SHUSHAN_PURIM
+      ]
+
+      # Given a holiday name, return a HebrewDate representing that holiday.
+      # @param holiday [Symbol] the name of the holiday. Possible values are
+      #   in the HOLIDAYS array.
+      # @param year [Integer] if given, the Hebrew year to search. Defaults
+      #   to the current year.
+      def from_holiday(holiday, year=nil)
+        year ||= HebrewDate.new.hebrew_year
+        case holiday
+          when :EREV_PESACH
+            HebrewDate.new_from_hebrew(year, 1, 14)
+          when :PESACH
+            HebrewDate.new_from_hebrew(year, 1, 15)
+          when :PESACH_2
+            HebrewDate.new_from_hebrew(year, 1, 21)
+          when :PESACH_SHENI
+            HebrewDate.new_from_hebrew(year, 2, 15)
+          when :YOM_HAZIKARON
+            HebrewDate.from_holiday(:YOM_HAATZMAUT).back
+          when :YOM_HAATZMAUT
+            date = HebrewDate.new_from_hebrew(year, 2, 5)
+            # Friday or Shabbat - move back to Thursday
+            # Monday - move forward to Tuesday
+            if date.day == 6
+              date.back
+            elsif date.day == 2
+              date.forward
+            elsif date.day == 7
+              date.set_hebrew_date(year, 2, 3)
+            end
+          when :LAG_BAOMER
+            HebrewDate.new_from_hebrew(year, 2, 18)
+          when :YOM_YERUSHALAYIM
+            HebrewDate.new_from_hebrew(year, 2, 28)
+          when :TZOM_TAMMUZ
+            date = HebrewDate.new_from_hebrew(year, 4, 17)
+            date.forward if date.day == 7
+            date
+          when :EREV_SHAVUOT
+            HebrewDate.new_from_hebrew(year, 3, 5)
+          when :SHAVUOT
+            HebrewDate.new_from_hebrew(year, 3, 6)
+          when :TISHA_BAV
+            date = HebrewDate.new_from_hebrew(year, 5, 9)
+            date.forward if date.day == 7
+            date
+          when :TU_BAV
+            HebrewDate.new_from_hebrew(year, 15, 9)
+          when :EREV_ROSH_HASHANA
+            HebrewDate.new_from_hebrew(year, 6, 29)
+          when :ROSH_HASHANA
+            HebrewDate.new_from_hebrew(year, 7, 1)
+          when :TZOM_GEDALIA
+            date = HebrewDate.new_from_hebrew(year, 7, 3)
+            date.forward if date.day == 7
+            date
+          when :EREV_YOM_KIPPUR
+            HebrewDate.new_from_hebrew(year, 7, 9)
+          when :YOM_KIPPUR
+            HebrewDate.new_from_hebrew(year, 7, 10)
+          when :EREV_SUKKOT
+            HebrewDate.new_from_hebrew(year, 7, 14)
+          when :SUKKOT
+            HebrewDate.new_from_hebrew(year, 7, 15)
+          when :SHMINI_ATZERET
+            HebrewDate.new_from_hebrew(year, 7, 22)
+          when :EREV_CHANUKAH
+            HebrewDate.new_from_hebrew(year, 9, 24)
+          when :CHANUKAH
+            HebrewDate.new_from_hebrew(year, 9, 25)
+          when :TZOM_TEVET
+            HebrewDate.new_from_hebrew(year, 10, 10)
+          when :TU_BISHVAT
+            HebrewDate.new_from_hebrew(year, 11, 15)
+          when :PURIM_KATAN
+            if HebrewDate.hebrew_leap_year?(year)
+              HebrewDate.new_from_hebrew(year, 12, 14)
+            end
+          when :TAANIT_ESTHER
+            date = HebrewDate.new_from_hebrew(year,
+                                HebrewDate.last_month_of_hebrew_year(year), 13)
+            if date.day == 7
+              date.set_hebrew_date(year, date.hebrew_month, 11)
+            elsif date.day == 6
+              date.back
+            end
+            date
+          when :PURIM
+            HebrewDate.new_from_hebrew(year,
+                               HebrewDate.last_month_of_hebrew_year(year), 14)
+          when :SHUSHAN_PURIM
+            HebrewDate.new_from_hebrew(year,
+                               HebrewDate.last_month_of_hebrew_year(year), 15)
+        end
+      end
+    end
+
     # Returns a string of the Jewish holiday or fast day for the current day,
     # or an empty string if there is no holiday for this day.
     # @param generic [Boolean] whether you want just a generic name
@@ -250,6 +381,10 @@ module HebrewDateSupport
             false
         end
       end
+    end
+
+    def self.included(base)
+      base.extend(ClassMethods)
     end
 
   end

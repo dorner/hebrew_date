@@ -12,8 +12,9 @@ require_relative 'support/parshiot.rb'
 # simultaneously. Note that you may call any Date methods on this class
 # and it should respond accordingly.
 class HebrewDate < Delegator
-  include HebrewDateSupport::Parshiot
-  include HebrewDateSupport::Holidays
+  include HebrewDateSupport::ParshaMethods
+  include HebrewDateSupport::HolidayMethods
+  # @!parse extend HebrewDateSupport::HolidayMethods::ClassMethods
 
   # @private
   HEBREW_EPOCH = -1373429
@@ -78,7 +79,23 @@ class HebrewDate < Delegator
 
   # @private
   def inspect
-    strftime('*Y *-m *-d')
+    strftime('*Y-*-m-*-d (%Y-%-m-%-d)')
+  end
+
+  # Add the dates specified (in days).
+  # @param [Fixnum] other_date the days to add.
+  # @return [HebrewDate]
+  def +(other_date)
+    date = self.to_date + other_date
+    HebrewDate.new(date.year, date.month, date.day)
+  end
+
+  # Subtract the dates specified (in days).
+  # @param [Fixnum] other_date the days to subtract.
+  # @return [HebrewDate]
+  def -(other_date)
+    date = self.to_date - other_date
+    HebrewDate.new(date.year, date.month, date.day)
   end
 
   # @private
@@ -167,7 +184,7 @@ class HebrewDate < Delegator
   end
 
   # Move forward one day.
-  # @return [void]
+  # @return [HebrewDate] the same HebrewDate object again, for chaining.
   def forward
     # Change Gregorian date
     if @date == last_day_of_month
@@ -207,10 +224,12 @@ class HebrewDate < Delegator
 
     # increment the absolute date
     @abs_date += 1
+
+    self
   end
 
   # Move back one day.
-  # @return [void]
+  # @return [HebrewDate] the same HebrewDate object again, for chaining.
   def back
     # Change Gregorian date
     if @date == 1
@@ -244,13 +263,20 @@ class HebrewDate < Delegator
 
     # Change the absolute date
     @abs_date -= 1
+
+    self
   end
 
   # Get the name of the current Hebrew month.
   # @return [String]
   def hebrew_month_to_s
-    name = HEBREW_MONTH_NAMES[@hebrew_month - 1]
-    if name == 'Teves' && !@ashkenaz
+    self.class.hebrew_month_to_s(@hebrew_month)
+  end
+
+  # Get the name of the given Hebrew month.
+  def self.hebrew_month_to_s(month)
+    name = HEBREW_MONTH_NAMES[month - 1]
+    if name == 'Teves' && !self.ashkenaz
       name = 'Tevet'
     end
     name
@@ -273,18 +299,19 @@ class HebrewDate < Delegator
   # @param format [String]
   # @return [String]
   def strftime(format)
-    format.gsub!('*Y', @hebrew_year.to_s)
-      .gsub!('*m', @hebrew_month.to_s.rjust(2, '0'))
-      .gsub!('*_m', @hebrew_month.to_s.rjust(2, ' '))
-      .gsub!('*-m', @hebrew_month.to_s)
-      .gsub!('*B', hebrew_month_to_s)
-      .gsub!('*^B', hebrew_month_to_s.upcase)
-      .gsub!('*b', hebrew_month_to_s[0, 3])
-      .gsub!('*^b', hebrew_month_to_s[0, 3].upcase)
-      .gsub!('*h', hebrew_month_to_s[0, 3])
-      .gsub!('*d', @hebrew_date.to_s.rjust(2, '0'))
-      .gsub!('*-d', @hebrew_date.to_s)
-      .gsub!('*e', @hebrew_date.to_s.rjust(2, ' '))
+    format = format.gsub('*Y', @hebrew_year.to_s)
+      .gsub('*m', @hebrew_month.to_s.rjust(2, '0'))
+      .gsub('*_m', @hebrew_month.to_s.rjust(2, ' '))
+      .gsub('*-m', @hebrew_month.to_s)
+      .gsub('*B', hebrew_month_to_s)
+      .gsub('*^B', hebrew_month_to_s.upcase)
+      .gsub('*b', hebrew_month_to_s[0, 3])
+      .gsub('*^b', hebrew_month_to_s[0, 3].upcase)
+      .gsub('*h', hebrew_month_to_s[0, 3])
+      .gsub('*d', @hebrew_date.to_s.rjust(2, '0'))
+      .gsub('*-d', @hebrew_date.to_s)
+      .gsub('*e', @hebrew_date.to_s.rjust(2, ' '))
+    super(format)
   end
 
   # Get the day of the week.
@@ -313,18 +340,33 @@ class HebrewDate < Delegator
     end
   end
 
-  # Is this a Hebrew leap year?
-  # @param year [Integer] Used internally.
-  # @return [Boolean]
-  def hebrew_leap_year?(year=nil)
-    year ||= @hebrew_year
-    (((7 * year) + 1).remainder(19)) < 7
+  class << self
+    # Is this a Hebrew leap year?
+    # @param year [Integer] the Hebrew year.
+    # @return [Boolean]
+    def hebrew_leap_year?(year)
+      (((7 * year) + 1).remainder(19)) < 7
+    end
+
+    # The last month in the Hebrew year (12 or 13).
+    # @param year [Integer] the Hebrew year.
+    # @return [Integer]
+    def last_month_of_hebrew_year(year)
+      hebrew_leap_year?(year) ? 13 : 12
+    end
+
   end
 
   # The last month in this Hebrew year (12 or 13).
   # @return [Integer]
   def last_month_of_hebrew_year
-    hebrew_leap_year? ? 13 : 12
+    self.class.last_month_of_hebrew_year(@hebrew_year)
+  end
+
+  # Is this a Hebrew leap year?
+  # @return [Boolean]
+  def hebrew_leap_year?
+    self.class.hebrew_leap_year?(@hebrew_year)
   end
 
   # Last day of the current Hebrew month.
@@ -402,10 +444,10 @@ class HebrewDate < Delegator
 		if (conjunction_parts >= 19440) || # If new moon is at or after midday,
 			(((conjunction_day.remainder(7)) == 2) &&	    # ...or is on a Tuesday...
 				(conjunction_parts >= 9924) &&	# at 9 hours, 204 parts or later...
-				!hebrew_leap_year?(year)) ||  # ...of a common year,
+				!HebrewDate.hebrew_leap_year?(year)) ||  # ...of a common year,
 			(((conjunction_day.remainder(7)) == 1) &&	 # ...or is on a Monday at...
 				(conjunction_parts >= 16789) && # 15 hours, 589 parts or later...
-				(hebrew_leap_year?(year - 1))) # at the end of a leap year
+				(HebrewDate.hebrew_leap_year?(year - 1))) # at the end of a leap year
 			# Then postpone Rosh HaShanah one day
 			alternative_day += 1
     end

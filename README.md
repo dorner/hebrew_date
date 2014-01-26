@@ -25,6 +25,7 @@ HebrewDates respond to all the methods dates do:
 
     HebrewDate.new.saturday?
     HebrewDate.new.beginning_of_week # Rails
+    HebrewDate.new + 3 # go 3 days forward
 
 Printing
 ========
@@ -73,4 +74,7 @@ accents by default. You can change this to Ashkenazi pronunciation by calling
 
     HebrewDate.ashkenazi = true
 
+You can also retrieve a date from the holiday name:
+
+    HebrewDate.from_holiday(:PURIM, 5774)
 
