@@ -90,7 +90,7 @@ class HebrewDate < Delegator
    :next_month, :next_year, :prev_day, :prev_month,
    :prev_year].each do |method_name|
     define_method(method_name) do |*args|
-      HebrewDate.new(self.to_date.send(method_name, *args))
+      self.class.new(self.to_date.send(method_name, *args))
     end
   end
 
@@ -107,7 +107,7 @@ class HebrewDate < Delegator
   # Get a clone of this object.
   # @return [HebrewDate]
   def clone
-    HebrewDate.new(self.to_date)
+    self.class.new(self.to_date)
   end
 
   # Comparison operator.
