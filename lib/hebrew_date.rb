@@ -224,8 +224,13 @@ class HebrewDate < Delegator
     self
   end
 
-  alias_method :next, :forward
-  alias_method :succ, :forward
+  # This does not modify the current date, but creates a new one.
+  # @return [HebrewDate]
+  def next
+    self + 1
+  end
+
+  alias_method :succ, :next
 
   # Move back one day.
   # @return [HebrewDate] the same HebrewDate object again, for chaining.
