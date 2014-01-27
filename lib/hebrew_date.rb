@@ -119,7 +119,7 @@ class HebrewDate < Delegator
 
   # Iterates evaluation of the given block, which takes a HebrewDate object.
   # The limit should be a Date or HebrewDate object.
-  def step(limit, step=1)
+  def step(limit, step=1, &block)
     return to_enum(:step, limit, step) unless block_given?
     (self..limit).step(step) { |date| yield(date) }
   end
@@ -127,7 +127,7 @@ class HebrewDate < Delegator
   # This method is equivalent to step(min, -1){|date| ...}.
   # @param min [Integer]
   # @return [Enumerator|self]
-  def downto(min)
+  def downto(min, &block)
     return to_enum(:downto, min) unless block_given?
     self.step(min, -1, &block)
   end
@@ -135,7 +135,7 @@ class HebrewDate < Delegator
   # This method is equivalent to step(max, 1){ |date| ...}.
   # @param max [Integer]
   # @return [Enumerator|self]
-  def upto(max)
+  def upto(max, &block)
     return to_enum(:upto, max) unless block_given?
     self.step(max, 1, &block)
   end
