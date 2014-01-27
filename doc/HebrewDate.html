@@ -192,6 +192,34 @@ it should respond accordingly.</p>
 </li>
 
     
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#replace_saturday-class_method" title="replace_saturday (class method)">+ (Boolean) <strong>replace_saturday</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>If true, replaces “Saturday” or “Sat” in <span class='object_link'><a href="#strftime-instance_method" title="HebrewDate#strftime (method)">#strftime</a></span> with “Shabbat” or
+“Shabbos” depending on the #ashkenaz value.</p>
+</div></span>
+  
+</li>
+
+    
   </ul>
 
   <h2>Instance Attribute Summary <small>(<a href="#" class="summary_toggle">collapse</a>)</small></h2>
@@ -492,54 +520,6 @@ it should respond accordingly.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#%2B-instance_method" title="#+ (instance method)">- (HebrewDate) <strong>+</strong>(other_date) </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Add the dates specified (in days).</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#--instance_method" title="#- (instance method)">- (HebrewDate) <strong>-</strong>(other_date) </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Subtract the dates specified (in days).</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
       <a href="#back-instance_method" title="#back (instance method)">- (HebrewDate) <strong>back</strong> </a>
     
 
@@ -615,6 +595,8 @@ it should respond accordingly.</p>
       <a href="#forward-instance_method" title="#forward (instance method)">- (HebrewDate) <strong>forward</strong> </a>
     
 
+    
+      (also: #next, #succ)
     
   </span>
   
@@ -941,10 +923,6 @@ it should respond accordingly.</p>
       <pre class="lines">
 
 
-60
-61
-62
-63
 64
 65
 66
@@ -959,10 +937,14 @@ it should respond accordingly.</p>
 75
 76
 77
-78</pre>
+78
+79
+80
+81
+82</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 60</span>
+      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 64</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_year_or_date_object'>year_or_date_object</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_month'>month</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_date'>date</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='ivar'>@abs_date</span> <span class='op'>=</span> <span class='int'>0</span>
@@ -1115,6 +1097,69 @@ it should respond accordingly.</p>
 </table>
 </div>
     
+      
+      <span id="replace_saturday=-class_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="replace_saturday-class_method">
+  
+    + (<tt>Boolean</tt>) <strong>replace_saturday</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns If true, replaces “Saturday” or “Sat” in <span class='object_link'><a href="#strftime-instance_method" title="HebrewDate#strftime (method)">#strftime</a></span> with “Shabbat”
+or “Shabbos” depending on the #ashkenaz value.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>If true, replaces “Saturday” or “Sat” in <span class='object_link'><a href="#strftime-instance_method" title="HebrewDate#strftime (method)">#strftime</a></span> with “Shabbat” or
+“Shabbos” depending on the #ashkenaz value.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+36
+37
+38</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 36</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_replace_saturday'>replace_saturday</span>
+  <span class='ivar'>@replace_saturday</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
   </div>
 
   <div id="instance_attr_details" class="attr_details">
@@ -1166,12 +1211,12 @@ it should respond accordingly.</p>
       <pre class="lines">
 
 
-46
-47
-48</pre>
+50
+51
+52</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 46</span>
+      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 50</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_date'>date</span>
   <span class='ivar'>@date</span>
@@ -1227,12 +1272,12 @@ it should respond accordingly.</p>
       <pre class="lines">
 
 
-55
-56
-57</pre>
+59
+60
+61</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 55</span>
+      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 59</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_hebrew_date'>hebrew_date</span>
   <span class='ivar'>@hebrew_date</span>
@@ -1288,12 +1333,12 @@ it should respond accordingly.</p>
       <pre class="lines">
 
 
-52
-53
-54</pre>
+56
+57
+58</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 52</span>
+      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 56</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_hebrew_month'>hebrew_month</span>
   <span class='ivar'>@hebrew_month</span>
@@ -1349,12 +1394,12 @@ it should respond accordingly.</p>
       <pre class="lines">
 
 
-49
-50
-51</pre>
+53
+54
+55</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 49</span>
+      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 53</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_hebrew_year'>hebrew_year</span>
   <span class='ivar'>@hebrew_year</span>
@@ -1410,12 +1455,12 @@ it should respond accordingly.</p>
       <pre class="lines">
 
 
-43
-44
-45</pre>
+47
+48
+49</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 43</span>
+      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 47</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_month'>month</span>
   <span class='ivar'>@month</span>
@@ -1471,12 +1516,12 @@ it should respond accordingly.</p>
       <pre class="lines">
 
 
-40
-41
-42</pre>
+44
+45
+46</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 40</span>
+      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 44</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_year'>year</span>
   <span class='ivar'>@year</span>
@@ -1552,12 +1597,12 @@ it should respond accordingly.</p>
       <pre class="lines">
 
 
-347
-348
-349</pre>
+355
+356
+357</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 347</span>
+      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 355</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_hebrew_leap_year?'>hebrew_leap_year?</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='rparen'>)</span>
   <span class='lparen'>(</span><span class='lparen'>(</span><span class='lparen'>(</span><span class='int'>7</span> <span class='op'>*</span> <span class='id identifier rubyid_year'>year</span><span class='rparen'>)</span> <span class='op'>+</span> <span class='int'>1</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_remainder'>remainder</span><span class='lparen'>(</span><span class='int'>19</span><span class='rparen'>)</span><span class='rparen'>)</span> <span class='op'>&lt;</span> <span class='int'>7</span>
@@ -1593,16 +1638,16 @@ it should respond accordingly.</p>
       <pre class="lines">
 
 
+276
 277
 278
 279
 280
 281
-282
-283</pre>
+282</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 277</span>
+      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 276</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_hebrew_month_to_s'>hebrew_month_to_s</span><span class='lparen'>(</span><span class='id identifier rubyid_month'>month</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='const'>HEBREW_MONTH_NAMES</span><span class='lbracket'>[</span><span class='id identifier rubyid_month'>month</span> <span class='op'>-</span> <span class='int'>1</span><span class='rbracket'>]</span>
@@ -1675,12 +1720,12 @@ it should respond accordingly.</p>
       <pre class="lines">
 
 
-354
-355
-356</pre>
+362
+363
+364</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 354</span>
+      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 362</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_last_month_of_hebrew_year'>last_month_of_hebrew_year</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_hebrew_leap_year?'>hebrew_leap_year?</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='int'>13</span> <span class='op'>:</span> <span class='int'>12</span>
@@ -1768,14 +1813,14 @@ it should respond accordingly.</p>
       <pre class="lines">
 
 
-121
-122
-123
-124
-125</pre>
+117
+118
+119
+120
+121</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 121</span>
+      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 117</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new_from_hebrew'>new_from_hebrew</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='comma'>,</span> <span class='id identifier rubyid_month'>month</span><span class='comma'>,</span> <span class='id identifier rubyid_date'>date</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_d'>d</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
@@ -1794,159 +1839,7 @@ it should respond accordingly.</p>
 
     
       <div class="method_details first">
-  <h3 class="signature first" id="+-instance_method">
-  
-    - (<tt><span class='object_link'><a href="" title="HebrewDate (class)">HebrewDate</a></span></tt>) <strong>+</strong>(other_date) 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>Add the dates specified (in days).</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  <p class="tag_title">Parameters:</p>
-<ul class="param">
-  
-    <li>
-      
-        <span class='name'>other_date</span>
-      
-      
-        <span class='type'>(<tt>Fixnum</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>the days to add.</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="" title="HebrewDate (class)">HebrewDate</a></span></tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-88
-89
-90
-91</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 88</span>
-
-<span class='kw'>def</span> <span class='op'>+</span><span class='lparen'>(</span><span class='id identifier rubyid_other_date'>other_date</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_date'>date</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_to_date'>to_date</span> <span class='op'>+</span> <span class='id identifier rubyid_other_date'>other_date</span>
-  <span class='const'>HebrewDate</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_date'>date</span><span class='period'>.</span><span class='id identifier rubyid_year'>year</span><span class='comma'>,</span> <span class='id identifier rubyid_date'>date</span><span class='period'>.</span><span class='id identifier rubyid_month'>month</span><span class='comma'>,</span> <span class='id identifier rubyid_date'>date</span><span class='period'>.</span><span class='id identifier rubyid_day'>day</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="--instance_method">
-  
-    - (<tt><span class='object_link'><a href="" title="HebrewDate (class)">HebrewDate</a></span></tt>) <strong>-</strong>(other_date) 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>Subtract the dates specified (in days).</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  <p class="tag_title">Parameters:</p>
-<ul class="param">
-  
-    <li>
-      
-        <span class='name'>other_date</span>
-      
-      
-        <span class='type'>(<tt>Fixnum</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>the days to subtract.</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="" title="HebrewDate (class)">HebrewDate</a></span></tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-96
-97
-98
-99</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 96</span>
-
-<span class='kw'>def</span> <span class='op'>-</span><span class='lparen'>(</span><span class='id identifier rubyid_other_date'>other_date</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_date'>date</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_to_date'>to_date</span> <span class='op'>-</span> <span class='id identifier rubyid_other_date'>other_date</span>
-  <span class='const'>HebrewDate</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_date'>date</span><span class='period'>.</span><span class='id identifier rubyid_year'>year</span><span class='comma'>,</span> <span class='id identifier rubyid_date'>date</span><span class='period'>.</span><span class='id identifier rubyid_month'>month</span><span class='comma'>,</span> <span class='id identifier rubyid_date'>date</span><span class='period'>.</span><span class='id identifier rubyid_day'>day</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="back-instance_method">
+  <h3 class="signature first" id="back-instance_method">
   
     - (<tt><span class='object_link'><a href="" title="HebrewDate (class)">HebrewDate</a></span></tt>) <strong>back</strong> 
   
@@ -1989,6 +1882,7 @@ it should respond accordingly.</p>
       <pre class="lines">
 
 
+232
 233
 234
 235
@@ -2023,11 +1917,10 @@ it should respond accordingly.</p>
 264
 265
 266
-267
-268</pre>
+267</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 233</span>
+      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 232</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_back'>back</span>
   <span class='comment'># Change Gregorian date
@@ -2109,12 +2002,12 @@ it should respond accordingly.</p>
       <pre class="lines">
 
 
-113
-114
-115</pre>
+109
+110
+111</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 113</span>
+      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 109</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_clone'>clone</span>
   <span class='const'>HebrewDate</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_to_date'>to_date</span><span class='rparen'>)</span>
@@ -2168,12 +2061,12 @@ it should respond accordingly.</p>
       <pre class="lines">
 
 
-319
-320
-321</pre>
+327
+328
+329</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 319</span>
+      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 327</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_day'>day</span>
   <span class='id identifier rubyid_to_date'>to_date</span><span class='period'>.</span><span class='id identifier rubyid_strftime'>strftime</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>%w</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span> <span class='op'>+</span> <span class='int'>1</span>
@@ -2189,6 +2082,10 @@ it should respond accordingly.</p>
     - (<tt><span class='object_link'><a href="" title="HebrewDate (class)">HebrewDate</a></span></tt>) <strong>forward</strong> 
   
 
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='next-instance_method'>next</span>, <span id='succ-instance_method'>succ</span></span>
+    </span>
   
 
   
@@ -2227,6 +2124,10 @@ it should respond accordingly.</p>
       <pre class="lines">
 
 
+184
+185
+186
+187
 188
 189
 190
@@ -2264,14 +2165,10 @@ it should respond accordingly.</p>
 222
 223
 224
-225
-226
-227
-228
-229</pre>
+225</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 188</span>
+      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 184</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_forward'>forward</span>
   <span class='comment'># Change Gregorian date
@@ -2359,12 +2256,12 @@ it should respond accordingly.</p>
       <pre class="lines">
 
 
-368
-369
-370</pre>
+376
+377
+378</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 368</span>
+      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 376</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_hebrew_leap_year?'>hebrew_leap_year?</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_hebrew_leap_year?'>hebrew_leap_year?</span><span class='lparen'>(</span><span class='ivar'>@hebrew_year</span><span class='rparen'>)</span>
@@ -2413,12 +2310,12 @@ it should respond accordingly.</p>
       <pre class="lines">
 
 
+271
 272
-273
-274</pre>
+273</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 272</span>
+      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 271</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_hebrew_month_to_s'>hebrew_month_to_s</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_hebrew_month_to_s'>hebrew_month_to_s</span><span class='lparen'>(</span><span class='ivar'>@hebrew_month</span><span class='rparen'>)</span>
@@ -2489,24 +2386,24 @@ it should respond accordingly.</p>
       <pre class="lines">
 
 
-375
-376
-377
-378
-379
-380
-381
-382
 383
 384
 385
 386
 387
 388
-389</pre>
+389
+390
+391
+392
+393
+394
+395
+396
+397</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 375</span>
+      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 383</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_last_day_of_hebrew_month'>last_day_of_hebrew_month</span><span class='lparen'>(</span><span class='id identifier rubyid_month'>month</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_month'>month</span> <span class='op'>||=</span> <span class='ivar'>@hebrew_month</span>
@@ -2589,14 +2486,6 @@ it should respond accordingly.</p>
       <pre class="lines">
 
 
-326
-327
-328
-329
-330
-331
-332
-333
 334
 335
 336
@@ -2604,10 +2493,18 @@ it should respond accordingly.</p>
 338
 339
 340
-341</pre>
+341
+342
+343
+344
+345
+346
+347
+348
+349</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 326</span>
+      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 334</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_last_day_of_month'>last_day_of_month</span><span class='lparen'>(</span><span class='id identifier rubyid_month'>month</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_month'>month</span> <span class='op'>||=</span> <span class='ivar'>@month</span>
@@ -2669,12 +2566,12 @@ it should respond accordingly.</p>
       <pre class="lines">
 
 
-362
-363
-364</pre>
+370
+371
+372</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 362</span>
+      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 370</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_last_month_of_hebrew_year'>last_month_of_hebrew_year</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_last_month_of_hebrew_year'>last_month_of_hebrew_year</span><span class='lparen'>(</span><span class='ivar'>@hebrew_year</span><span class='rparen'>)</span>
@@ -2762,6 +2659,10 @@ it should respond accordingly.</p>
       <pre class="lines">
 
 
+128
+129
+130
+131
 132
 133
 134
@@ -2776,14 +2677,10 @@ it should respond accordingly.</p>
 143
 144
 145
-146
-147
-148
-149
-150</pre>
+146</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 132</span>
+      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 128</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_set_date'>set_date</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='comma'>,</span> <span class='id identifier rubyid_month'>month</span><span class='comma'>,</span> <span class='id identifier rubyid_date'>date</span><span class='rparen'>)</span>
   <span class='comment'># precond should be 1-&gt;12 anyways, but just in case...
@@ -2887,6 +2784,10 @@ it should respond accordingly.</p>
       <pre class="lines">
 
 
+153
+154
+155
+156
 157
 158
 159
@@ -2904,14 +2805,10 @@ it should respond accordingly.</p>
 171
 172
 173
-174
-175
-176
-177
-178</pre>
+174</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 157</span>
+      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 153</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_set_hebrew_date'>set_hebrew_date</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='comma'>,</span> <span class='id identifier rubyid_month'>month</span><span class='comma'>,</span> <span class='id identifier rubyid_date'>date</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Illegal value for Hebrew year: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_year'>year</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='id identifier rubyid_year'>year</span> <span class='op'>&lt;</span> <span class='int'>0</span>
@@ -2953,7 +2850,9 @@ it should respond accordingly.</p>
   <div class="discussion">
     
 <p>Extend the Date strftime method by replacing Hebrew fields. You can denote
-Hebrew fields by using the * flag. Supported flags are:</p>
+Hebrew fields by using the * flag. Also note that ::replace_saturday will
+replace the %A, %^A, %a and %^a flags with Shabbat/Shabbos. Supported flags
+are:</p>
 
 <pre class="code ruby"><code class="ruby">* *Y - Hebrew year
 * *m - Hebrew month, zero-padded
@@ -3008,7 +2907,6 @@ Hebrew fields by using the * flag. Supported flags are:</p>
       <pre class="lines">
 
 
-301
 302
 303
 304
@@ -3022,10 +2920,18 @@ Hebrew fields by using the * flag. Supported flags are:</p>
 312
 313
 314
-315</pre>
+315
+316
+317
+318
+319
+320
+321
+322
+323</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 301</span>
+      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 302</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_strftime'>strftime</span><span class='lparen'>(</span><span class='id identifier rubyid_format'>format</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_format'>format</span> <span class='op'>=</span> <span class='id identifier rubyid_format'>format</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>*Y</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='ivar'>@hebrew_year</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rparen'>)</span><span class='period'>
@@ -3040,6 +2946,13 @@ Hebrew fields by using the * flag. Supported flags are:</p>
 </span><span class='id identifier rubyid_    .gsub'>    .gsub</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>*d</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='ivar'>@hebrew_date</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='period'>.</span><span class='id identifier rubyid_rjust'>rjust</span><span class='lparen'>(</span><span class='int'>2</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='period'>
 </span><span class='id identifier rubyid_    .gsub'>    .gsub</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>*-d</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='ivar'>@hebrew_date</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rparen'>)</span><span class='period'>
 </span><span class='id identifier rubyid_    .gsub'>    .gsub</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>*e</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='ivar'>@hebrew_date</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='period'>.</span><span class='id identifier rubyid_rjust'>rjust</span><span class='lparen'>(</span><span class='int'>2</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'> </span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='const'>HebrewDate</span><span class='period'>.</span><span class='id identifier rubyid_replace_saturday'>replace_saturday</span> <span class='op'>&amp;&amp;</span> <span class='ivar'>@hebrew_date</span><span class='period'>.</span><span class='id identifier rubyid_day'>day</span> <span class='op'>==</span> <span class='int'>7</span>
+    <span class='id identifier rubyid_shab_name'>shab_name</span> <span class='op'>=</span> <span class='const'>HebrewDate</span><span class='period'>.</span><span class='id identifier rubyid_ashkenaz'>ashkenaz</span> <span class='op'>?</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Shabbos</span><span class='tstring_end'>&#39;</span></span> <span class='op'>:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Shabbat</span><span class='tstring_end'>&#39;</span></span>
+    <span class='id identifier rubyid_format'>format</span> <span class='op'>=</span> <span class='id identifier rubyid_format'>format</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>%A</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_shab_name'>shab_name</span><span class='rparen'>)</span><span class='period'>
+</span><span class='id identifier rubyid_      .gsub'>      .gsub</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>%^A</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_shab_name'>shab_name</span><span class='period'>.</span><span class='id identifier rubyid_upcase'>upcase</span><span class='rparen'>)</span><span class='period'>
+</span><span class='id identifier rubyid_      .gsub'>      .gsub</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>%a</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_shab_name'>shab_name</span><span class='lbracket'>[</span><span class='int'>0</span><span class='op'>..</span><span class='int'>2</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='period'>
+</span><span class='id identifier rubyid_      .gsub'>      .gsub</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>%^a</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_shab_name'>shab_name</span><span class='lbracket'>[</span><span class='int'>0</span><span class='op'>..</span><span class='int'>2</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_upcase'>upcase</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
   <span class='kw'>super</span><span class='lparen'>(</span><span class='id identifier rubyid_format'>format</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -3086,12 +2999,12 @@ Hebrew fields by using the * flag. Supported flags are:</p>
       <pre class="lines">
 
 
-182
-183
-184</pre>
+178
+179
+180</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 182</span>
+      <pre class="code"><span class="info file"># File 'lib/hebrew_date.rb', line 178</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_date'>to_date</span>
   <span class='const'>Date</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='ivar'>@year</span><span class='comma'>,</span> <span class='ivar'>@month</span><span class='comma'>,</span> <span class='ivar'>@date</span><span class='rparen'>)</span>
@@ -3106,7 +3019,7 @@ Hebrew fields by using the * flag. Supported flags are:</p>
 </div>
 
     <div id="footer">
-  Generated on Sun Jan 26 12:16:13 2014 by
+  Generated on Mon Jan 27 11:49:55 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.3 (ruby-2.0.0).
 </div>

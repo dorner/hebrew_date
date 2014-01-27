@@ -14,7 +14,7 @@ require_relative 'support/parshiot.rb'
 class HebrewDate < Delegator
   include HebrewDateSupport::ParshaMethods
   include HebrewDateSupport::HolidayMethods
-  # @!parse extend HebrewDateSupport::HolidayMethods::ClassMethods
+  extend HebrewDateSupport::HolidayMethods::ClassMethods
 
   # @private
   HEBREW_EPOCH = -1373429
@@ -30,6 +30,10 @@ class HebrewDate < Delegator
 
     # @return [Boolean] Whether to use Israeli parsha/holiday scheme.
     attr_accessor :israeli
+
+    # @return [Boolean] If true, replaces "Saturday" or "Sat" in {#strftime}
+    #   with "Shabbat" or "Shabbos" depending on the #ashkenaz value.
+    attr_accessor :replace_saturday
 
     # @private
     attr_accessor :debug
@@ -82,20 +86,12 @@ class HebrewDate < Delegator
     strftime('*Y-*-m-*-d (%Y-%-m-%-d)')
   end
 
-  # Add the dates specified (in days).
-  # @param [Fixnum] other_date the days to add.
-  # @return [HebrewDate]
-  def +(other_date)
-    date = self.to_date + other_date
-    HebrewDate.new(date.year, date.month, date.day)
-  end
-
-  # Subtract the dates specified (in days).
-  # @param [Fixnum] other_date the days to subtract.
-  # @return [HebrewDate]
-  def -(other_date)
-    date = self.to_date - other_date
-    HebrewDate.new(date.year, date.month, date.day)
+  [:+, :-, :<<, :>>, :gregorian, :england, :italy, :julian, :new_start,
+   :next_month, :next_year, :prev_day, :prev_month,
+   :prev_year].each do |method_name|
+    define_method(method_name) do |*args|
+      HebrewDate.new(self.to_date.send(method_name, *args))
+    end
   end
 
   # @private
@@ -228,6 +224,9 @@ class HebrewDate < Delegator
     self
   end
 
+  alias_method :next, :forward
+  alias_method :succ, :forward
+
   # Move back one day.
   # @return [HebrewDate] the same HebrewDate object again, for chaining.
   def back
@@ -283,7 +282,9 @@ class HebrewDate < Delegator
   end
 
   # Extend the Date strftime method by replacing Hebrew fields. You can denote
-  # Hebrew fields by using the * flag. Supported flags are:
+  # Hebrew fields by using the * flag. Also note that ::replace_saturday will
+  # replace the %A, %^A, %a and %^a flags with Shabbat/Shabbos.
+  # Supported flags are:
   #  * *Y - Hebrew year
   #  * *m - Hebrew month, zero-padded
   #  * *_m - Hebrew month, blank-padded
@@ -311,6 +312,13 @@ class HebrewDate < Delegator
       .gsub('*d', @hebrew_date.to_s.rjust(2, '0'))
       .gsub('*-d', @hebrew_date.to_s)
       .gsub('*e', @hebrew_date.to_s.rjust(2, ' '))
+    if HebrewDate.replace_saturday && @hebrew_date.day == 7
+      shab_name = HebrewDate.ashkenaz ? 'Shabbos' : 'Shabbat'
+      format = format.gsub('%A', shab_name)
+        .gsub('%^A', shab_name.upcase)
+        .gsub('%a', shab_name[0..2])
+        .gsub('%^a', shab_name[0..2].upcase)
+    end
     super(format)
   end
 
