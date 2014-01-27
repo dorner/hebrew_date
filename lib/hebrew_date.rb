@@ -110,6 +110,36 @@ class HebrewDate < Delegator
     HebrewDate.new(self.to_date)
   end
 
+  # Comparison operator.
+  # @param other [HebrewDate]
+  # @return [Integer] -1, 0, or 1
+  def <=>(other)
+    self.to_date <=> other.to_date
+  end
+
+  # Iterates evaluation of the given block, which takes a HebrewDate object.
+  # The limit should be a Date or HebrewDate object.
+  def step(limit, step=1)
+    return to_enum(:step, limit, step) unless block_given?
+    (self..limit).step(step) { |date| yield(date) }
+  end
+
+  # This method is equivalent to step(min, -1){|date| ...}.
+  # @param min [Integer]
+  # @return [Enumerator|self]
+  def downto(min)
+    return to_enum(:downto, min) unless block_given?
+    self.step(min, -1, &block)
+  end
+
+  # This method is equivalent to step(max, 1){ |date| ...}.
+  # @param max [Integer]
+  # @return [Enumerator|self]
+  def upto(max)
+    return to_enum(:upto, max) unless block_given?
+    self.step(max, 1, &block)
+  end
+
   # Create a HebrewDate with initialized Hebrew date values.
   # @param year [Integer] the Hebrew year (e.g. 5774)
   # @param month [Integer] the Hebrew month (1-13)
