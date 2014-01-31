@@ -304,7 +304,7 @@ class HebrewDate < Delegator
   # Get the name of the current Hebrew month.
   # @return [String]
   def hebrew_month_to_s
-    self.class.hebrew_month_to_s(@hebrew_month)
+    self.class.hebrew_month_to_s(@hebrew_month, @hebrew_year)
   end
 
   # Get the name of the given Hebrew month.
