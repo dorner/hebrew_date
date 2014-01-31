@@ -308,13 +308,28 @@ class HebrewDate < Delegator
   end
 
   # Get the name of the given Hebrew month.
-  def self.hebrew_month_to_s(month)
-    name = HEBREW_MONTH_NAMES[month - 1]
-    if name == 'Teves' && !self.ashkenaz
-      name = 'Tevet'
+  # @param month [Integer]
+  # @param year [Integer]
+  # @return [String]
+  def self.hebrew_month_to_s(month, year=nil)
+    year ||= HebrewDate.new.hebrew_year
+    if hebrew_leap_year?(year) && month == 12
+      'Adar I'
+    else
+      name = HEBREW_MONTH_NAMES[month - 1]
+      if name == 'Teves' && !self.ashkenaz
+        name = 'Tevet'
+      end
+      name
     end
-    name
   end
+
+  # @return [Boolean]
+  def shabbos?
+    self.saturday?
+  end
+
+  alias_method :shabbat?, :shabbos?
 
   # Extend the Date strftime method by replacing Hebrew fields. You can denote
   # Hebrew fields by using the * flag. Also note that ::replace_saturday will
