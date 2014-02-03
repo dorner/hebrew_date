@@ -326,7 +326,7 @@ class HebrewDate < Delegator
   # @param year [Integer]
   # @return [String]
   def self.hebrew_month_to_s(month, year=nil)
-    year ||= self.class.new.hebrew_year
+    year ||= self.new.hebrew_year
     if hebrew_leap_year?(year) && month == 12
       'Adar I'
     else
@@ -376,7 +376,7 @@ class HebrewDate < Delegator
       .gsub('*d', @hebrew_date.to_s.rjust(2, '0'))
       .gsub('*-d', @hebrew_date.to_s)
       .gsub('*e', @hebrew_date.to_s.rjust(2, ' '))
-    if self.class.replace_saturday && @hebrew_date.day == 7
+    if self.class.replace_saturday && self.day == 7
       shab_name = self.class.ashkenaz ? 'Shabbos' : 'Shabbat'
       format = format.gsub('%A', shab_name)
         .gsub('%^A', shab_name.upcase)
