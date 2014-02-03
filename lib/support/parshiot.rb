@@ -189,7 +189,7 @@ module HebrewDateSupport
       # index= the index number of the parsha name
       array = []
       # create a clone of this date
-      rosh_hashana = HebrewDate.new_from_hebrew(@hebrew_year, 7, 1)
+      rosh_hashana = self.class.new_from_hebrew(@hebrew_year, 7, 1)
 
       # get day Rosh Hashana was on
       rosh_hashana_day = rosh_hashana.day

@@ -86,7 +86,7 @@ class HebrewDate < Delegator
     strftime('*Y-*-m-*-d (%Y-%-m-%-d)')
   end
 
-  [:+, :-, :<<, :>>, :gregorian, :england, :italy, :julian, :new_start,
+  [:<<, :>>, :gregorian, :england, :italy, :julian, :new_start,
    :next_month, :next_year, :prev_day, :prev_month,
    :prev_year].each do |method_name|
     define_method(method_name) do |*args|
@@ -104,10 +104,24 @@ class HebrewDate < Delegator
     # do nothing
   end
 
-  # Get a clone of this object.
+  # @param other [Fixnum]
   # @return [HebrewDate]
-  def clone
-    self.class.new(self.to_date)
+  def +(other)
+    date = self.clone
+    (1..other).each do |i|
+      date.forward
+    end
+    date
+  end
+
+  # @param other [Fixnum]
+  # @return [HebrewDate]
+  def -(other)
+    date = self.clone
+    (1..other).each do |i|
+      date.back
+    end
+    date
   end
 
   # Comparison operator.
@@ -312,7 +326,7 @@ class HebrewDate < Delegator
   # @param year [Integer]
   # @return [String]
   def self.hebrew_month_to_s(month, year=nil)
-    year ||= HebrewDate.new.hebrew_year
+    year ||= self.class.new.hebrew_year
     if hebrew_leap_year?(year) && month == 12
       'Adar I'
     else
@@ -362,8 +376,8 @@ class HebrewDate < Delegator
       .gsub('*d', @hebrew_date.to_s.rjust(2, '0'))
       .gsub('*-d', @hebrew_date.to_s)
       .gsub('*e', @hebrew_date.to_s.rjust(2, ' '))
-    if HebrewDate.replace_saturday && @hebrew_date.day == 7
-      shab_name = HebrewDate.ashkenaz ? 'Shabbos' : 'Shabbat'
+    if self.class.replace_saturday && @hebrew_date.day == 7
+      shab_name = self.class.ashkenaz ? 'Shabbos' : 'Shabbat'
       format = format.gsub('%A', shab_name)
         .gsub('%^A', shab_name.upcase)
         .gsub('%a', shab_name[0..2])
@@ -502,10 +516,10 @@ class HebrewDate < Delegator
 		if (conjunction_parts >= 19440) || # If new moon is at or after midday,
 			(((conjunction_day.remainder(7)) == 2) &&	    # ...or is on a Tuesday...
 				(conjunction_parts >= 9924) &&	# at 9 hours, 204 parts or later...
-				!HebrewDate.hebrew_leap_year?(year)) ||  # ...of a common year,
+				!self.class.hebrew_leap_year?(year)) ||  # ...of a common year,
 			(((conjunction_day.remainder(7)) == 1) &&	 # ...or is on a Monday at...
 				(conjunction_parts >= 16789) && # 15 hours, 589 parts or later...
-				(HebrewDate.hebrew_leap_year?(year - 1))) # at the end of a leap year
+				(self.class.hebrew_leap_year?(year - 1))) # at the end of a leap year
 			# Then postpone Rosh HaShanah one day
 			alternative_day += 1
     end
