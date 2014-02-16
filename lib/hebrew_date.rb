@@ -63,6 +63,11 @@ class HebrewDate < Delegator
 
   def initialize(year_or_date_object=nil, month=nil, date=nil)
     @abs_date = 0
+    skip_hebrew_date = false
+    if year_or_date_object === true
+      skip_hebrew_date = true
+      year_or_date_object = nil
+    end
 
     if month && date
       @year = year_or_date_object
@@ -77,7 +82,7 @@ class HebrewDate < Delegator
     @israeli = self.class.israeli
     @ashkenaz = self.class.ashkenaz
     @debug = self.class.debug
-    set_date(@year, @month, @date)
+    set_date(@year, @month, @date) unless skip_hebrew_date
     super(Date.new)
   end
 
@@ -159,8 +164,11 @@ class HebrewDate < Delegator
   # @param month [Integer] the Hebrew month (1-13)
   # @param date [Integer] the day of the Hebrew month (1-30)
   def self.new_from_hebrew(year, month, date)
-    d = self.new
-    d.set_hebrew_date(year, month, date)
+    d = self.new(true)
+    @year = 1
+    @month = 1
+    @date = 1
+    d.set_hebrew_date(year, month, date, true)
     d
   end
 
@@ -193,8 +201,14 @@ class HebrewDate < Delegator
   # @param year [Integer] the Hebrew year (e.g. 2008)
   # @param month [Integer] the Hebrew month (1-13)
   # @param date [Integer] the Hebrew day of month (1-30)
+  # @param auto_set [Boolean] Used internally.
   # @return [void]
-  def set_hebrew_date(year, month, date)
+  def set_hebrew_date(year, month, date, auto_set=false)
+    if auto_set
+      @hebrew_year = year
+      @hebrew_month = month
+      @hebrew_date = date
+    end
     return "Illegal value for Hebrew year: #{year}" if year < 0
     if month < 0 || month > last_month_of_hebrew_year
       return "Illegal value for Hebrew month: #{month}"
@@ -500,7 +514,7 @@ class HebrewDate < Delegator
   # @param year [Integer]
   # @return [Integer]
   def _hebrew_calendar_elapsed_days(year)
-    puts "hebrew_calendar_elapsed_days #{year}" if @debug
+#    puts "hebrew_calendar_elapsed_days #{year}" if @debug
     months_elapsed =
 			(235 * ((year - 1) / 19.0).to_i) + # Months in complete cycles so far
 			(12 * ((year - 1).remainder(19))) +			# Regular months in this cycle
@@ -529,7 +543,7 @@ class HebrewDate < Delegator
     if [0, 3, 5].include?(alternative_day.remainder(7))
       alternative_day += 1
     end
-    puts "hebrew_calendar_elapsed_days calculated #{alternative_day}" if @debug
+#    puts "hebrew_calendar_elapsed_days calculated #{alternative_day}" if @debug
     alternative_day
   end
 
@@ -552,8 +566,14 @@ class HebrewDate < Delegator
   # @return [void]
   def _abs_date_to_hebrew_date!
     puts "abs_date_to_hebrew_date #{@abs_date}" if @debug
-    # Approximation from below.
-    @hebrew_year = ((@abs_date + HEBREW_EPOCH) / 366.0).ceil
+    # Speed this up - most dates will be current, so let's use a value
+    # we know about.
+    if @abs_date >= 735279
+      @hebrew_year = 5770
+    else
+      # Approximation from below.
+      @hebrew_year = ((@abs_date + HEBREW_EPOCH) / 366.0).ceil
+    end
     # Search forward for year from the approximation.
     while @abs_date >= _hebrew_date_to_abs_date(@hebrew_year + 1, 7, 1) do
       @hebrew_year += 1
