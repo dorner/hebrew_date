@@ -25,6 +25,7 @@ module HebrewDateSupport
         :EREV_SUKKOT,
         :SUKKOT,
         :SHMINI_ATZERET,
+        :SIMCHAT_TORAH,
         :EREV_CHANUKAH,
         :CHANUKAH,
         :TZOM_TEVET,
@@ -100,6 +101,8 @@ module HebrewDateSupport
             self.new_from_hebrew(year, 7, 15)
           when :SHMINI_ATZERET
             self.new_from_hebrew(year, 7, 22)
+          when :SIMCHAT_TORAH
+            self.new_from_hebrew(year, 7, 23)
           when :EREV_CHANUKAH
             self.new_from_hebrew(year, 9, 24)
           when :CHANUKAH
@@ -305,6 +308,26 @@ module HebrewDateSupport
         when 1
           # 2nd and last days Pesach
           return true if [15, 21].include?(@hebrew_date)
+        when 3
+          # Shavuos
+          return true if @hebrew_date == 6
+      end
+      false
+    end
+
+    # Is this a second day of yom tov?
+    def second_day_yom_tov?
+      # only second day Yom Tov in Israel is Rosh Hashana
+      if @israeli
+        return @hebrew_month == 7 && @hebrew_date == 2
+      end
+      case @hebrew_month
+        when 7
+          # Rosh Hashana, Sukkos, and Shmini Atzeres
+          return true if [2, 16, 23].include?(@hebrew_date)
+        when 1
+          # 2nd and last days Pesach
+          return true if [16, 22].include?(@hebrew_date)
         when 3
           # Shavuos
           return true if @hebrew_date == 6
