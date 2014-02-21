@@ -260,16 +260,23 @@ module HebrewDateSupport
     end
 
     # Get the number of the Omer for this day, or nil if there isn't one.
+    # @param for_night [Boolean] if true, give the Omer count for the previous
+    #  night - i.e. 1 more than the Omer for the current day.
     # @return [Integer]
-    def omer
-      if @hebrew_month == 1 && @hebrew_date >= 16
+    def omer(for_night=false)
+      for_night_offset = for_night ? 1 : 0
+      if for_night && @hebrew_month == 1 && @hebrew_date == 15
+        1
+      elsif for_night && @hebrew_month == 3 && @hebrew_date == 5
+        nil
+      elsif @hebrew_month == 1 && @hebrew_date >= 16
         # Nissan, second day of Pesach and on
-        @hebrew_date - 15
+        @hebrew_date - 15 + for_night_offset
       elsif @hebrew_month == 2 # Iyar
-        @hebrew_date + 15
+        @hebrew_date + 15 + for_night_offset
       elsif @hebrew_month == 3 && @hebrew_date < 6
         # Sivan, before Shavuos
-        @hebrew_date + 44
+        @hebrew_date + 44 + for_night_offset
       end
     end
 
