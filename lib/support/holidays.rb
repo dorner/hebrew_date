@@ -148,6 +148,9 @@ module HebrewDateSupport
       # check by month (starts from Nissan)
       case @hebrew_month
         when 1
+          if @hebrew_date == 12 && self.thursday?
+            return @ashkenaz ? "Ta'anis Bechoros" : "Ta'anit Bechorot"
+          end
           return 'Erev Pesach' if @hebrew_date == 14
           if @hebrew_date == 15 || @hebrew_date == 21 ||
             (!@israeli && (@hebrew_date == 16 || @hebrew_date == 22))
