@@ -441,6 +441,17 @@ class HebrewDate < Delegator
       hebrew_leap_year?(year) ? 13 : 12
     end
 
+    # Get the name of the given day (1-7).
+    # @param day [Integer]
+    # @return [String]
+    def day_name(day)
+      if self.replace_saturday && day == 7
+        self.ashkenaz ? 'Shabbos' : 'Shabbat'
+      else
+        Date::DAYNAMES[day - 1]
+      end
+    end
+
   end
 
   # The last month in this Hebrew year (12 or 13).
