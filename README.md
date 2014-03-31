@@ -47,6 +47,11 @@ except that they start with * instead of %:
 * ``*-d`` - Hebrew day of month, no-padded
 * ``*e`` - Hebrew day of month, blank-padded
 
+There is an additional flag added which is of simple utility:
+
+* ``%.b`` - Gregorian day of month, followed by a period (.), *except* for May,
+    which doesn't need one and is incorrect.
+
 Parsha
 ======
 

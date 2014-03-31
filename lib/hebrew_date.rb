@@ -360,7 +360,9 @@ class HebrewDate < Delegator
   alias_method :shabbat?, :shabbos?
 
   # Extend the Date strftime method by replacing Hebrew fields. You can denote
-  # Hebrew fields by using the * flag. Also note that ::replace_saturday will
+  # Hebrew fields by using the * flag. There is one extra flag, %.b, which
+  # adds a period after the 3-letter month name *except* for May.
+  # Also note that ::replace_saturday will
   # replace the %A, %^A, %a and %^a flags with Shabbat/Shabbos.
   # Supported flags are:
   #  * *Y - Hebrew year
@@ -375,6 +377,8 @@ class HebrewDate < Delegator
   #  * *d - Hebrew day of month, zero-padded
   #  * *-d - Hebrew day of month, no-padded
   #  * *e - Hebrew day of month, blank-padded
+  #  * %.b - Gregorian month, 3 letter name, followed by a period, except for
+  #     May
   # @param format [String]
   # @return [String]
   def strftime(format)
@@ -390,6 +394,7 @@ class HebrewDate < Delegator
       .gsub('*d', @hebrew_date.to_s.rjust(2, '0'))
       .gsub('*-d', @hebrew_date.to_s)
       .gsub('*e', @hebrew_date.to_s.rjust(2, ' '))
+      .gsub('%.b', self.month == 5 ? '%b' : '%b.')
     if self.class.replace_saturday && self.day == 7
       shab_name = self.class.ashkenaz ? 'Shabbos' : 'Shabbat'
       format = format.gsub('%A', shab_name)
