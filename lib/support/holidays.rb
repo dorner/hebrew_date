@@ -4,7 +4,7 @@ module HebrewDateSupport
 
       # A list of holidays which can be passed into the from_holiday method.
       HOLIDAYS = [
-        :TAANIT_BECHOROT,
+        :TAANIT_BECHORIM,
         :EREV_PESACH,
         :PESACH,
         :PESACH_2,
@@ -45,7 +45,7 @@ module HebrewDateSupport
       def from_holiday(holiday, year=nil)
         year ||= self.new.hebrew_year
         case holiday
-          when :TAANIT_BECHOROT
+          when :TAANIT_BECHORIM
             date = self.from_holiday(:EREV_PESACH, year)
             date.shabbos? ? date - 2 : date
           when :EREV_PESACH
@@ -149,7 +149,7 @@ module HebrewDateSupport
       case @hebrew_month
         when 1
           if @hebrew_date == 12 && self.thursday?
-            return @ashkenaz ? "Ta'anis Bechoros" : "Ta'anit Bechorot"
+            return @ashkenaz ? "Ta'anis Bechorim" : "Ta'anit Bechorim"
           end
           return 'Erev Pesach' if @hebrew_date == 14
           if @hebrew_date == 15 || @hebrew_date == 21 ||

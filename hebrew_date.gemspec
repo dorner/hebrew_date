@@ -1,8 +1,8 @@
 Gem::Specification.new do |s|
   s.name         = 'hebrew_date'
   s.require_paths = %w(. lib)
-  s.version      = '1.0.19'
-  s.date         = '2014-03-31'
+  s.version      = '1.0.20'
+  s.date         = '2014-04-03'
   s.summary      = 'Hebrew/Jewish dates, times, and holidays.'
   s.description  = <<-EOF
    hebrew_date is a library designed to provide information about the Jewish
