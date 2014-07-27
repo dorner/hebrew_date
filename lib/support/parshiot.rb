@@ -310,6 +310,15 @@ module HebrewDateSupport
         return 'Parah' if @hebrew_date > 17 && @hebrew_date < 24
         return 'Hachodesh' if @hebrew_date > 24
       end
+
+      if @hebrew_month == 5
+        if @hebrew_date < 9 && @hebrew_date > 2
+          return 'Chazon'
+        elsif @hebrew_date > 9 && @hebrew_date < 16
+          return 'Nachamu'
+        end
+      end
+
       nil
     end
 
