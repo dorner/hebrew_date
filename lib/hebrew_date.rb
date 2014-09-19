@@ -237,6 +237,11 @@ class HebrewDate < Delegator
     Date.new(@year, @month, @date)
   end
 
+  # Return a String of the Hebrew date: "5774-06-19"
+  def to_s
+    "#{@hebrew_year}-#{@hebrew_month}-#{@hebrew_date}"
+  end
+
   # Move forward one day.
   # @return [HebrewDate] the same HebrewDate object again, for chaining.
   def forward
