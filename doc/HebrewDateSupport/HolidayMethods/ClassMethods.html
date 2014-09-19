@@ -1,0 +1,466 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: HebrewDateSupport::HolidayMethods::ClassMethods
+  
+    &mdash; Documentation by YARD 0.8.7.3
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../../';
+  framesUrl = "../../frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../../_index.html">Index (C)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../HebrewDateSupport.html" title="HebrewDateSupport (module)">HebrewDateSupport</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../HolidayMethods.html" title="HebrewDateSupport::HolidayMethods (module)">HolidayMethods</a></span></span>
+     &raquo; 
+    <span class="title">ClassMethods</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Module: HebrewDateSupport::HolidayMethods::ClassMethods
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+    <dt class="r1">Included in:</dt>
+    <dd class="r1"><span class='object_link'><a href="../../HebrewDate.html" title="HebrewDate (class)">HebrewDate</a></span></dd>
+    
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/support/holidays.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+  <h2>Constant Summary</h2>
+  
+    <dl class="constants">
+      
+        <dt id="HOLIDAYS-constant" class="">HOLIDAYS =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>A list of holidays which can be passed into the from_holiday method.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='lbracket'>[</span>
+  <span class='symbol'>:TAANIT_BECHORIM</span><span class='comma'>,</span>
+  <span class='symbol'>:EREV_PESACH</span><span class='comma'>,</span>
+  <span class='symbol'>:PESACH</span><span class='comma'>,</span>
+  <span class='symbol'>:PESACH_2</span><span class='comma'>,</span>
+  <span class='symbol'>:PESACH_SHENI</span><span class='comma'>,</span>
+  <span class='symbol'>:YOM_HAATZMAUT</span><span class='comma'>,</span>
+  <span class='symbol'>:YOM_HAZIKARON</span><span class='comma'>,</span>
+  <span class='symbol'>:YOM_YERUSHALAYIM</span><span class='comma'>,</span>
+  <span class='symbol'>:LAG_BAOMER</span><span class='comma'>,</span>
+  <span class='symbol'>:EREV_SHAVUOT</span><span class='comma'>,</span>
+  <span class='symbol'>:SHAVUOT</span><span class='comma'>,</span>
+  <span class='symbol'>:TZOM_TAMMUZ</span><span class='comma'>,</span>
+  <span class='symbol'>:TISHA_BAV</span><span class='comma'>,</span>
+  <span class='symbol'>:TU_BAV</span><span class='comma'>,</span>
+  <span class='symbol'>:EREV_ROSH_HASHANA</span><span class='comma'>,</span>
+  <span class='symbol'>:ROSH_HASHANA</span><span class='comma'>,</span>
+  <span class='symbol'>:TZOM_GEDALIA</span><span class='comma'>,</span>
+  <span class='symbol'>:EREV_YOM_KIPPUR</span><span class='comma'>,</span>
+  <span class='symbol'>:YOM_KIPPUR</span><span class='comma'>,</span>
+  <span class='symbol'>:EREV_SUKKOT</span><span class='comma'>,</span>
+  <span class='symbol'>:SUKKOT</span><span class='comma'>,</span>
+  <span class='symbol'>:SHMINI_ATZERET</span><span class='comma'>,</span>
+  <span class='symbol'>:SIMCHAT_TORAH</span><span class='comma'>,</span>
+  <span class='symbol'>:EREV_CHANUKAH</span><span class='comma'>,</span>
+  <span class='symbol'>:CHANUKAH</span><span class='comma'>,</span>
+  <span class='symbol'>:TZOM_TEVET</span><span class='comma'>,</span>
+  <span class='symbol'>:TU_BISHVAT</span><span class='comma'>,</span>
+  <span class='symbol'>:PURIM_KATAN</span><span class='comma'>,</span>
+  <span class='symbol'>:TAANIT_ESTHER</span><span class='comma'>,</span>
+  <span class='symbol'>:PURIM</span><span class='comma'>,</span>
+  <span class='symbol'>:SHUSHAN_PURIM</span>
+<span class='rbracket'>]</span></pre></dd>
+      
+    </dl>
+  
+
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#from_holiday-instance_method" title="#from_holiday (instance method)">- (Object) <strong>from_holiday</strong>(holiday, year = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Given a holiday name, return a HebrewDate representing that holiday.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="from_holiday-instance_method">
+  
+    - (<tt>Object</tt>) <strong>from_holiday</strong>(holiday, year = nil) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Given a holiday name, return a HebrewDate representing that holiday.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>holiday</span>
+      
+      
+        <span class='type'>(<tt>Symbol</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the name of the holiday. Possible values are in the HOLIDAYS array.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>year</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if given, the Hebrew year to search. Defaults to the current year.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/support/holidays.rb', line 45</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_from_holiday'>from_holiday</span><span class='lparen'>(</span><span class='id identifier rubyid_holiday'>holiday</span><span class='comma'>,</span> <span class='id identifier rubyid_year'>year</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_year'>year</span> <span class='op'>||=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='period'>.</span><span class='id identifier rubyid_hebrew_year'>hebrew_year</span>
+  <span class='kw'>case</span> <span class='id identifier rubyid_holiday'>holiday</span>
+    <span class='kw'>when</span> <span class='symbol'>:TAANIT_BECHORIM</span>
+      <span class='id identifier rubyid_date'>date</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_from_holiday'>from_holiday</span><span class='lparen'>(</span><span class='symbol'>:EREV_PESACH</span><span class='comma'>,</span> <span class='id identifier rubyid_year'>year</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_date'>date</span><span class='period'>.</span><span class='id identifier rubyid_shabbos?'>shabbos?</span> <span class='op'>?</span> <span class='id identifier rubyid_date'>date</span> <span class='op'>-</span> <span class='int'>2</span> <span class='op'>:</span> <span class='id identifier rubyid_date'>date</span>
+    <span class='kw'>when</span> <span class='symbol'>:EREV_PESACH</span>
+      <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new_from_hebrew'>new_from_hebrew</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='int'>14</span><span class='rparen'>)</span>
+    <span class='kw'>when</span> <span class='symbol'>:PESACH</span>
+      <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new_from_hebrew'>new_from_hebrew</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='int'>15</span><span class='rparen'>)</span>
+    <span class='kw'>when</span> <span class='symbol'>:PESACH_2</span>
+      <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new_from_hebrew'>new_from_hebrew</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='int'>21</span><span class='rparen'>)</span>
+    <span class='kw'>when</span> <span class='symbol'>:PESACH_SHENI</span>
+      <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new_from_hebrew'>new_from_hebrew</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='comma'>,</span> <span class='int'>2</span><span class='comma'>,</span> <span class='int'>15</span><span class='rparen'>)</span>
+    <span class='kw'>when</span> <span class='symbol'>:YOM_HAZIKARON</span>
+      <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_from_holiday'>from_holiday</span><span class='lparen'>(</span><span class='symbol'>:YOM_HAATZMAUT</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_back'>back</span>
+    <span class='kw'>when</span> <span class='symbol'>:YOM_HAATZMAUT</span>
+      <span class='id identifier rubyid_date'>date</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new_from_hebrew'>new_from_hebrew</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='comma'>,</span> <span class='int'>2</span><span class='comma'>,</span> <span class='int'>5</span><span class='rparen'>)</span>
+      <span class='comment'># Friday or Shabbat - move back to Thursday
+</span>      <span class='comment'># Monday - move forward to Tuesday
+</span>      <span class='kw'>if</span> <span class='id identifier rubyid_date'>date</span><span class='period'>.</span><span class='id identifier rubyid_day'>day</span> <span class='op'>==</span> <span class='int'>6</span>
+        <span class='id identifier rubyid_date'>date</span><span class='period'>.</span><span class='id identifier rubyid_back'>back</span>
+      <span class='kw'>elsif</span> <span class='id identifier rubyid_date'>date</span><span class='period'>.</span><span class='id identifier rubyid_day'>day</span> <span class='op'>==</span> <span class='int'>2</span>
+        <span class='id identifier rubyid_date'>date</span><span class='period'>.</span><span class='id identifier rubyid_forward'>forward</span>
+      <span class='kw'>elsif</span> <span class='id identifier rubyid_date'>date</span><span class='period'>.</span><span class='id identifier rubyid_day'>day</span> <span class='op'>==</span> <span class='int'>7</span>
+        <span class='id identifier rubyid_date'>date</span><span class='period'>.</span><span class='id identifier rubyid_set_hebrew_date'>set_hebrew_date</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='comma'>,</span> <span class='int'>2</span><span class='comma'>,</span> <span class='int'>3</span><span class='rparen'>)</span>
+      <span class='kw'>end</span>
+    <span class='kw'>when</span> <span class='symbol'>:LAG_BAOMER</span>
+      <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new_from_hebrew'>new_from_hebrew</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='comma'>,</span> <span class='int'>2</span><span class='comma'>,</span> <span class='int'>18</span><span class='rparen'>)</span>
+    <span class='kw'>when</span> <span class='symbol'>:YOM_YERUSHALAYIM</span>
+      <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new_from_hebrew'>new_from_hebrew</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='comma'>,</span> <span class='int'>2</span><span class='comma'>,</span> <span class='int'>28</span><span class='rparen'>)</span>
+    <span class='kw'>when</span> <span class='symbol'>:TZOM_TAMMUZ</span>
+      <span class='id identifier rubyid_date'>date</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new_from_hebrew'>new_from_hebrew</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='comma'>,</span> <span class='int'>4</span><span class='comma'>,</span> <span class='int'>17</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_date'>date</span><span class='period'>.</span><span class='id identifier rubyid_forward'>forward</span> <span class='kw'>if</span> <span class='id identifier rubyid_date'>date</span><span class='period'>.</span><span class='id identifier rubyid_day'>day</span> <span class='op'>==</span> <span class='int'>7</span>
+      <span class='id identifier rubyid_date'>date</span>
+    <span class='kw'>when</span> <span class='symbol'>:EREV_SHAVUOT</span>
+      <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new_from_hebrew'>new_from_hebrew</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='comma'>,</span> <span class='int'>3</span><span class='comma'>,</span> <span class='int'>5</span><span class='rparen'>)</span>
+    <span class='kw'>when</span> <span class='symbol'>:SHAVUOT</span>
+      <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new_from_hebrew'>new_from_hebrew</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='comma'>,</span> <span class='int'>3</span><span class='comma'>,</span> <span class='int'>6</span><span class='rparen'>)</span>
+    <span class='kw'>when</span> <span class='symbol'>:TISHA_BAV</span>
+      <span class='id identifier rubyid_date'>date</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new_from_hebrew'>new_from_hebrew</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='comma'>,</span> <span class='int'>5</span><span class='comma'>,</span> <span class='int'>9</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_date'>date</span><span class='period'>.</span><span class='id identifier rubyid_forward'>forward</span> <span class='kw'>if</span> <span class='id identifier rubyid_date'>date</span><span class='period'>.</span><span class='id identifier rubyid_day'>day</span> <span class='op'>==</span> <span class='int'>7</span>
+      <span class='id identifier rubyid_date'>date</span>
+    <span class='kw'>when</span> <span class='symbol'>:TU_BAV</span>
+      <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new_from_hebrew'>new_from_hebrew</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='comma'>,</span> <span class='int'>15</span><span class='comma'>,</span> <span class='int'>9</span><span class='rparen'>)</span>
+    <span class='kw'>when</span> <span class='symbol'>:EREV_ROSH_HASHANA</span>
+      <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new_from_hebrew'>new_from_hebrew</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='comma'>,</span> <span class='int'>6</span><span class='comma'>,</span> <span class='int'>29</span><span class='rparen'>)</span>
+    <span class='kw'>when</span> <span class='symbol'>:ROSH_HASHANA</span>
+      <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new_from_hebrew'>new_from_hebrew</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='comma'>,</span> <span class='int'>7</span><span class='comma'>,</span> <span class='int'>1</span><span class='rparen'>)</span>
+    <span class='kw'>when</span> <span class='symbol'>:TZOM_GEDALIA</span>
+      <span class='id identifier rubyid_date'>date</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new_from_hebrew'>new_from_hebrew</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='comma'>,</span> <span class='int'>7</span><span class='comma'>,</span> <span class='int'>3</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_date'>date</span><span class='period'>.</span><span class='id identifier rubyid_forward'>forward</span> <span class='kw'>if</span> <span class='id identifier rubyid_date'>date</span><span class='period'>.</span><span class='id identifier rubyid_day'>day</span> <span class='op'>==</span> <span class='int'>7</span>
+      <span class='id identifier rubyid_date'>date</span>
+    <span class='kw'>when</span> <span class='symbol'>:EREV_YOM_KIPPUR</span>
+      <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new_from_hebrew'>new_from_hebrew</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='comma'>,</span> <span class='int'>7</span><span class='comma'>,</span> <span class='int'>9</span><span class='rparen'>)</span>
+    <span class='kw'>when</span> <span class='symbol'>:YOM_KIPPUR</span>
+      <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new_from_hebrew'>new_from_hebrew</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='comma'>,</span> <span class='int'>7</span><span class='comma'>,</span> <span class='int'>10</span><span class='rparen'>)</span>
+    <span class='kw'>when</span> <span class='symbol'>:EREV_SUKKOT</span>
+      <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new_from_hebrew'>new_from_hebrew</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='comma'>,</span> <span class='int'>7</span><span class='comma'>,</span> <span class='int'>14</span><span class='rparen'>)</span>
+    <span class='kw'>when</span> <span class='symbol'>:SUKKOT</span>
+      <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new_from_hebrew'>new_from_hebrew</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='comma'>,</span> <span class='int'>7</span><span class='comma'>,</span> <span class='int'>15</span><span class='rparen'>)</span>
+    <span class='kw'>when</span> <span class='symbol'>:SHMINI_ATZERET</span>
+      <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new_from_hebrew'>new_from_hebrew</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='comma'>,</span> <span class='int'>7</span><span class='comma'>,</span> <span class='int'>22</span><span class='rparen'>)</span>
+    <span class='kw'>when</span> <span class='symbol'>:SIMCHAT_TORAH</span>
+      <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new_from_hebrew'>new_from_hebrew</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='comma'>,</span> <span class='int'>7</span><span class='comma'>,</span> <span class='int'>23</span><span class='rparen'>)</span>
+    <span class='kw'>when</span> <span class='symbol'>:EREV_CHANUKAH</span>
+      <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new_from_hebrew'>new_from_hebrew</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='comma'>,</span> <span class='int'>9</span><span class='comma'>,</span> <span class='int'>24</span><span class='rparen'>)</span>
+    <span class='kw'>when</span> <span class='symbol'>:CHANUKAH</span>
+      <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new_from_hebrew'>new_from_hebrew</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='comma'>,</span> <span class='int'>9</span><span class='comma'>,</span> <span class='int'>25</span><span class='rparen'>)</span>
+    <span class='kw'>when</span> <span class='symbol'>:TZOM_TEVET</span>
+      <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new_from_hebrew'>new_from_hebrew</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='comma'>,</span> <span class='int'>10</span><span class='comma'>,</span> <span class='int'>10</span><span class='rparen'>)</span>
+    <span class='kw'>when</span> <span class='symbol'>:TU_BISHVAT</span>
+      <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new_from_hebrew'>new_from_hebrew</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='comma'>,</span> <span class='int'>11</span><span class='comma'>,</span> <span class='int'>15</span><span class='rparen'>)</span>
+    <span class='kw'>when</span> <span class='symbol'>:PURIM_KATAN</span>
+      <span class='kw'>if</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_hebrew_leap_year?'>hebrew_leap_year?</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='rparen'>)</span>
+        <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new_from_hebrew'>new_from_hebrew</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='comma'>,</span> <span class='int'>12</span><span class='comma'>,</span> <span class='int'>14</span><span class='rparen'>)</span>
+      <span class='kw'>end</span>
+    <span class='kw'>when</span> <span class='symbol'>:TAANIT_ESTHER</span>
+      <span class='id identifier rubyid_date'>date</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new_from_hebrew'>new_from_hebrew</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='comma'>,</span>
+                          <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_last_month_of_hebrew_year'>last_month_of_hebrew_year</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='int'>13</span><span class='rparen'>)</span>
+      <span class='kw'>if</span> <span class='id identifier rubyid_date'>date</span><span class='period'>.</span><span class='id identifier rubyid_day'>day</span> <span class='op'>==</span> <span class='int'>7</span>
+        <span class='id identifier rubyid_date'>date</span><span class='period'>.</span><span class='id identifier rubyid_set_hebrew_date'>set_hebrew_date</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='comma'>,</span> <span class='id identifier rubyid_date'>date</span><span class='period'>.</span><span class='id identifier rubyid_hebrew_month'>hebrew_month</span><span class='comma'>,</span> <span class='int'>11</span><span class='rparen'>)</span>
+      <span class='kw'>elsif</span> <span class='id identifier rubyid_date'>date</span><span class='period'>.</span><span class='id identifier rubyid_day'>day</span> <span class='op'>==</span> <span class='int'>6</span>
+        <span class='id identifier rubyid_date'>date</span><span class='period'>.</span><span class='id identifier rubyid_back'>back</span>
+      <span class='kw'>end</span>
+      <span class='id identifier rubyid_date'>date</span>
+    <span class='kw'>when</span> <span class='symbol'>:PURIM</span>
+      <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new_from_hebrew'>new_from_hebrew</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='comma'>,</span>
+                         <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_last_month_of_hebrew_year'>last_month_of_hebrew_year</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='int'>14</span><span class='rparen'>)</span>
+    <span class='kw'>when</span> <span class='symbol'>:SHUSHAN_PURIM</span>
+      <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new_from_hebrew'>new_from_hebrew</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='comma'>,</span>
+                         <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_last_month_of_hebrew_year'>last_month_of_hebrew_year</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='int'>15</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Fri Sep 19 12:15:09 2014 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.3 (ruby-2.0.0).
+</div>
+
+  </body>
+</html>
