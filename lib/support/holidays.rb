@@ -57,7 +57,7 @@ module HebrewDateSupport
           when :PESACH_SHENI
             self.new_from_hebrew(year, 2, 15)
           when :YOM_HAZIKARON
-            self.from_holiday(:YOM_HAATZMAUT).back
+            self.from_holiday(:YOM_HAATZMAUT, year).back
           when :YOM_HAATZMAUT
             date = self.new_from_hebrew(year, 2, 5)
             # Friday or Shabbat - move back to Thursday
