@@ -289,6 +289,24 @@ class HebrewDate < Delegator
     self + 1
   end
 
+  # This does not modify the current date, but creates a new one.
+  # @return [HebrewDate]
+  def next_hebrew_month
+    current_month = self.hebrew_month
+    date = self.clone
+    date.forward while date.hebrew_month == current_month
+    date
+  end
+
+  # This does not modify the current date, but creates a new one.
+  # @return [HebrewDate]
+  def prev_hebrew_month
+    current_month = self.hebrew_month
+    date = self.clone
+    date.back while date.hebrew_month == current_month
+    date
+  end
+
   alias_method :succ, :next
 
   # Move back one day.
