@@ -12,6 +12,7 @@ require_relative 'support/parshiot.rb'
 # simultaneously. Note that you may call any Date methods on this class
 # and it should respond accordingly.
 class HebrewDate < Delegator
+  include Comparable
   include HebrewDateSupport::ParshaMethods
   include HebrewDateSupport::HolidayMethods
   extend HebrewDateSupport::HolidayMethods::ClassMethods
