@@ -296,7 +296,7 @@ module HebrewDateSupport
       adar = last_month_of_hebrew_year
 
       if @hebrew_month == 1
-        return 'Hagadol' if @hebrew_date > 8 && @hebrew_date < 15
+        return 'Hagadol' if @hebrew_date >= 8 && @hebrew_date < 15
         return 'Hachodesh' if @hebrew_date == 1
       end
       return 'Shuva' if @hebrew_month == 7 && @hebrew_date < 10
