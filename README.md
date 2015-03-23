@@ -1,12 +1,8 @@
 # HebrewDate
 
 `hebrew_date` is a library designed to provide information about the Jewish
-calendar. This includes dates, holidays, and parsha of the week.
-
-<!---
-`hebrew_date` depends on the [ruby-sun-times](https://github.com/joeyates/ruby-sun-times)
-gem.
---->
+calendar. This includes dates, holidays, and parsha of the week. It also
+calculates sunrise, sunset, and other times of the day.
 
 Usage
 =====
@@ -61,11 +57,8 @@ will have "special" values appended to it (e.g. the special Parshiyot,
 Shekalim, Zachor, Parah and Hachodesh), which can optionally be suppressed.
 
 By default HebrewDate will use the "chutz la'aretz" parsha scheme (i.e. assuming
-two-day Yom Tov). You can use the Israeli scheme by calling
-
-    HebrewDate.israeli = true
-
-before creating your first instance of HebrewDate.
+two-day Yom Tov). You can use the Israeli scheme by using the ``israeli``
+configuration (below).
 
 Holiday
 =======
@@ -75,11 +68,36 @@ If the current date is a Jewish holiday (including Erev Yom Tov and the
 can retrieve those as strings via the ``holiday`` method.
 
 Month names, holidays and parshiyot all will be in Sephardic / Mizrachi
-accents by default. You can change this to Ashkenazi pronunciation by calling
-
-    HebrewDate.ashkenazi = true
+accents by default. You can change this to Ashkenazi pronunciation by using the
+``ashkenazi`` configuration (below).
 
 You can also retrieve a date from the holiday name:
 
     HebrewDate.from_holiday(:PURIM, 5774)
 
+Configuration
+=============
+
+HebrewDate can be configured like most gems by using a ``configure`` block.
+Configuration options are shown below, with their defaults:
+
+    HebrewDate.configure do |config|
+      # Use the Ashkenazi pronunciation.
+      config.ashkenaz = false
+      # Use Israeli parsha scheme.
+      config.israeli = false
+      # Replace "Saturday" or "Sat" in string formatting with "Shabbos" or
+      # "Shabbat" depending on settings.
+      config.replace_saturday = false
+      # Latitude to use when calculating times.
+      config.latitude = 43.65
+      # Longitude to use when calculating times.
+      config.longitude = -79.383333
+      # Number of degrees below the horizon which should be used to calculate
+      # Misheyakir.
+      config.misheyakir_degrees = 11
+      # Number of minutes before sunset to calculate candle lighting time.
+      config.candle_lighting_offset = 18
+      # Number of minutes after sunset to calculate Havdala / Motz'ei Shabbos.
+      config.havdala_offset = 50
+    end

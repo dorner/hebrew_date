@@ -2,6 +2,8 @@ require 'date'
 require 'delegate'
 require_relative 'support/holidays.rb'
 require_relative 'support/parshiot.rb'
+require_relative 'support/times.rb'
+require_relative 'support/configuration.rb'
 
 # This code is essentially a port of Avrom Finkelstein's RegularHebrewDate
 # Java class (http://web.archive.org/web/20061207174551/http://www.bayt.org/calendar/hebdate.html)
@@ -15,7 +17,9 @@ class HebrewDate < Delegator
   include Comparable
   include HebrewDateSupport::ParshaMethods
   include HebrewDateSupport::HolidayMethods
+  include HebrewDateSupport::Times
   extend HebrewDateSupport::HolidayMethods::ClassMethods
+  extend HebrewDateSupport::Configuration
 
   # @private
   HEBREW_EPOCH = -1373429
@@ -25,21 +29,41 @@ class HebrewDate < Delegator
                         'Tishrei', 'Cheshvan', 'Kislev', 'Teves', 'Shvat',
                         'Adar', 'Adar II']
 
-  class << self
-    # @return [Boolean] Whether to use Ashkenazi pronunciation.
-    attr_accessor :ashkenaz
+  # @return [Boolean] Whether to use Ashkenazi pronunciation.
+  define_setting :ashkenaz, false
 
-    # @return [Boolean] Whether to use Israeli parsha/holiday scheme.
-    attr_accessor :israeli
+  # @return [Boolean] Whether to use Israeli parsha/holiday scheme.
+  define_setting :israeli, false
 
-    # @return [Boolean] If true, replaces "Saturday" or "Sat" in {#strftime}
-    #   with "Shabbat" or "Shabbos" depending on the #ashkenaz value.
-    attr_accessor :replace_saturday
+  # @return [Boolean] If true, replaces "Saturday" or "Sat" in {#strftime}
+  #   with "Shabbat" or "Shabbos" depending on the #ashkenaz value.
+  define_setting :replace_saturday, false
 
-    # @private
-    attr_accessor :debug
+  # Latitude to use when calculating times. Defaults to Toronto.
+  # @return [Float]
+  define_setting :latitude, 43.65
 
-  end
+  # Longitude to use when calculating times. Defaults to Toronto.
+  # @return [Float]
+  define_setting :longitude, -79.383333
+
+  # Number of degrees below the horizon to calculate Misheyakir. Default
+  # is 11 degrees.
+  # @return [Float]
+  define_setting :misheyakir_degrees, 11
+
+  # Number of minutes before sunset to calculate candle lighting. Default
+  # is 18.
+  # @return [Integer]
+  define_setting :candle_lighting_offset, 18
+
+  # Number of minutes after sunset to calculate havdala / fast ends etc.
+  # Default is 50.
+  # @return [Integer]
+  define_setting :havdala_offset, 50
+
+  # @private
+  define_setting :debug
 
   # @return [Integer] the current Gregorian year (e.g. 2008).
   attr_reader :year
@@ -364,7 +388,7 @@ class HebrewDate < Delegator
       'Adar I'
     else
       name = HEBREW_MONTH_NAMES[month - 1]
-      if name == 'Teves' && !self.ashkenaz
+      if name == 'Teves' && !@ashkenaz
         name = 'Tevet'
       end
       name
@@ -415,7 +439,7 @@ class HebrewDate < Delegator
       .gsub('*e', @hebrew_date.to_s.rjust(2, ' '))
       .gsub('%.b', self.month == 5 ? '%b' : '%b.')
     if self.class.replace_saturday && self.day == 7
-      shab_name = self.class.ashkenaz ? 'Shabbos' : 'Shabbat'
+      shab_name = @ashkenaz ? 'Shabbos' : 'Shabbat'
       format = format.gsub('%A', shab_name)
         .gsub('%^A', shab_name.upcase)
         .gsub('%a', shab_name[0..2])
@@ -470,7 +494,7 @@ class HebrewDate < Delegator
     # @return [String]
     def day_name(day)
       if self.replace_saturday && day == 7
-        self.ashkenaz ? 'Shabbos' : 'Shabbat'
+        @ashkenaz ? 'Shabbos' : 'Shabbat'
       else
         Date::DAYNAMES[day - 1]
       end
@@ -549,7 +573,6 @@ class HebrewDate < Delegator
   # @param year [Integer]
   # @return [Integer]
   def _hebrew_calendar_elapsed_days(year)
-#    puts "hebrew_calendar_elapsed_days #{year}" if @debug
     months_elapsed =
 			(235 * ((year - 1) / 19.0).to_i) + # Months in complete cycles so far
 			(12 * ((year - 1).remainder(19))) +			# Regular months in this cycle
@@ -578,7 +601,6 @@ class HebrewDate < Delegator
     if [0, 3, 5].include?(alternative_day.remainder(7))
       alternative_day += 1
     end
-#    puts "hebrew_calendar_elapsed_days calculated #{alternative_day}" if @debug
     alternative_day
   end
 
