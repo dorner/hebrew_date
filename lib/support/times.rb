@@ -18,20 +18,20 @@ module HebrewDateSupport
     # @return [Time]
     def candle_lighting
       return nil unless self.candle_lighting_day?
-      self.sunset - (@config.candle_lighting_offset * 60)
+      self.sunset - (self.class.candle_lighting_offset * 60)
     end
 
     # Get the havdala time, in UTC. Nil if today is not a havdala day.
     # @return [Time]
     def havdala
       return nil unless self.havdala_day?
-      self.sunset + (@config.havdala_offset * 60)
+      self.sunset + (self.class.havdala_offset * 60)
     end
 
     # Get the misheyakir time in UTC, based on the number of degrees configured.
     # @return [Time]
     def misheyakir
-      self.suntimes(90 + @config.misheyakir_degrees)[0]
+      self.suntimes(90 + self.class.misheyakir_degrees)[0]
     end
 
     # Based on https://github.com/sevrinsky/shul-calendar/blob/master/Suntimes.pm
@@ -42,8 +42,8 @@ module HebrewDateSupport
       b = 3.14159
       c = 4.71239
       d = 6.28319
-      e = 0.0174533 * @config.latitude
-      f = 0.0174533 * @config.longitude
+      e = 0.0174533 * self.class.latitude
+      f = 0.0174533 * self.class.longitude
       g = 0 # timezone offset
       r = Math.cos(0.01745 * degrees)
       j = sr = ss = nil
@@ -132,7 +132,7 @@ module HebrewDateSupport
         if hour < 0
           hour += 12
         end
-        Time.new(self.year, self.month, self.day, hour, min)
+        Time.utc(self.year, self.month, self.date, hour, min)
       end
     end
 
