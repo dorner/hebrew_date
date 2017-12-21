@@ -15,7 +15,6 @@ EOF
   s.homepage     = 'https://github.com/dorner/hebrew_date'
   s.license       = 'MIT'
 
-  s.add_development_dependency 'yard'
   s.add_development_dependency 'rspec'
 
 end

@@ -372,6 +372,12 @@ class HebrewDate < Delegator
     self
   end
 
+  # Return a new date which is one day earlier than this one.
+  # @return [HebrewDate]
+  def prev
+    self - 1
+  end
+
   # Get the name of the current Hebrew month.
   # @return [String]
   def hebrew_month_to_s
