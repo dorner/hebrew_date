@@ -18,5 +18,6 @@ EOF
 
   s.add_development_dependency 'yard', '~> 0.9.37'
   s.add_development_dependency 'rspec', '~> 3.13'
+  s.add_development_dependency 'rake'
 
 end
