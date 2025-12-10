@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'date'
 require 'delegate'
 require_relative 'support/holidays.rb'
@@ -110,7 +112,7 @@ class HebrewDate < Delegator
     # do nothing
   end
 
-  # @param other [Fixnum]
+  # @param other [Integer]
   # @return [HebrewDate]
   def +(other)
     date = self.clone
@@ -120,7 +122,7 @@ class HebrewDate < Delegator
     date
   end
 
-  # @param other [Fixnum]
+  # @param other [Integer]
   # @return [HebrewDate]
   def -(other)
     date = self.clone
